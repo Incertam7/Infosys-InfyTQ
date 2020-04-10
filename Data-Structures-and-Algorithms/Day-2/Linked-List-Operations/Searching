@@ -36,7 +36,7 @@ class LinkedList:
     
     def display(self):
         temp = self.__head
-        while(temp is not None):
+        while temp is not None:
             print(temp.get_data())
             temp = temp.get_next()
     
@@ -45,7 +45,7 @@ class LinkedList:
             return None
         else:
             temp = self.get_head()
-            while(temp is not None):
+            while temp is not None:
                 if temp.get_data() == data:
                     return temp
                 elif temp.get_next() is None:
@@ -57,7 +57,7 @@ class LinkedList:
     def __str__(self):
         temp = self.__head
         msg = []
-        while(temp is not None):
+        while temp is not None:
            msg.append(str(temp.get_data()))
            temp = temp.get_next()
         msg = " ".join(msg)
