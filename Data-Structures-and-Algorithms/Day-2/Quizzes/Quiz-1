@@ -1,0 +1,8 @@
+Which of the following statements are false? Select three that are false.
+
+
+If the number of elements are known in advance, then it is better to use linked list rather than array
+
+Any element in a linked list can be directly accessed whereas in array it cannot be accessed directly
+
+Inserting an element at the middle is faster in array compared to linked list
