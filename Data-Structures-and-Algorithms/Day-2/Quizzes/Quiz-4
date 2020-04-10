@@ -1,0 +1,26 @@
+ What will be the order of elements in the linked list after line 19?
+
+def fun(prv,nxt,data):
+    if(nxt==None):
+        return
+    if(nxt.get_data()==data):
+        global sample
+        sample.add(data)
+        prv.set_next(nxt.get_next())
+        return
+    else:
+        fun(nxt,nxt.get_next(),data)
+
+sample=LinkedList()
+sample.add(10)
+sample.add(20)
+sample.add(5)
+sample.add(55)
+sample.add(38)
+sample_head=sample.get_head()
+fun(sample_head, sample_head,5)
+
+
+
+
+10 20 55 38 5
