@@ -1,0 +1,17 @@
+Consider the input_linked_list below:
+
+input_linked_list: 1->4->9->16
+What will be the value of the elements in the input_linked_list after the function fun() is invoked by passing the head of the input_linked_list as an argument?
+
+def fun(head):
+    next_node = head.get_next()
+    while(head!=None and next_node != None):
+        head.set_data(head.get_data()+next_node.get_data())
+        head = head.get_next()
+        next_node = head.get_next()
+        if(next_node != None):
+            head.set_data(head.get_data()+next_node.get_data())
+
+
+
+5 22 41 16
