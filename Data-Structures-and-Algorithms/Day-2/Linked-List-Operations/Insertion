@@ -76,7 +76,7 @@ class LinkedList:
     def __str__(self):
         temp = self.__head
         msg = []
-        while(temp is not None):
+        while temp is not None:
            msg.append(str(temp.get_data()))
            temp = temp.get_next()
         msg = " ".join(msg)
