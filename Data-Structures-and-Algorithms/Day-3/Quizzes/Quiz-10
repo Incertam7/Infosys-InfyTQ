@@ -1,0 +1,36 @@
+Consider list1 and list2 linked lists given below:
+
+list1: 15 -> 18 -> 25 -> 30
+list2: 11 -> 14 -> 17 -> 23 -> 32 -> 56
+
+What will be the elements of the queue that is returned by the code snippet given below when list1 and list2 are passed as 
+arguments to function, fun?
+
+def fun(input_list1, input_list2):
+    temp1 = input_list1.get_head()
+    temp2 = input_list2.get_head()
+    output_queue = Queue(10)
+    while(temp1 != None and temp2 != None):
+        if(temp1.get_data() < temp2.get_data()):
+            output_queue.enqueue(temp1.get_data())
+            temp1 = temp1.get_next()
+        elif(temp1.get_data() > temp2.get_data()):
+            output_queue.enqueue(temp2.get_data())
+            temp2 = temp2.get_next()
+        else:
+            output_queue.enqueue(temp2.get_data())
+            temp1 = temp1.get_next()
+            temp2 = temp2.get_next()
+    while(temp1 != None):
+        output_queue.enqueue(temp1.get_data())
+        temp1 = temp1.get_next()
+    while(temp2 != None):
+        output_queue.enqueue(temp2.get_data())
+        temp2 = temp2.get_next()
+    return output_queue
+
+Note: Order of displaying the queue elements is from front to rear.
+
+
+
+11,14,15,17,18,23,25,30,32,56
