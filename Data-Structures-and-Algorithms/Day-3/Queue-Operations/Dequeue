@@ -36,6 +36,7 @@ class Queue:
             if print_dequeued_element:
                 print(data, "has been dequeued")
             self.__front += 1
+            return data
     
     def display(self):
         index = self.__front
