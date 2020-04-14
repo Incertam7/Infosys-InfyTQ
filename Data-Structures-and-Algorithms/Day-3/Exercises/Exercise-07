@@ -76,8 +76,6 @@ class Box:
         self.manufacturer1_stack = Stack(2) # consider "Penn" to be manufacturer1
         self.manufacturer2_stack = Stack(2) # consider "Wilson" to be manufacturer2
 
-        # Write your logic here
-        
     def group_balls(self):
         while not self.ball_stack.is_empty():
             ball = self.ball_stack.pop()
@@ -88,10 +86,10 @@ class Box:
             else:
                 print("Manufacturer not found")
                 
-    def display_ball_details(self, manufacturer_name):
-        if manufacturer_name == "Penn":
+    def display_ball_details(self, manufacturer):
+        if manufacturer == "Penn":
             self.manufacturer1_stack.display()
-        elif manufacturer_name == "Wilson":
+        elif manufacturer == "Wilson":
             self.manufacturer2_stack.display()
         else:
             print("Manufacturer not found")
