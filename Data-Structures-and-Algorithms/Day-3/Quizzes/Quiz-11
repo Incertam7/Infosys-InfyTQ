@@ -1,0 +1,15 @@
+A travel agent plans trips for tourists from Chicago to Miami. He gives them three ways to get from town to town: airplane, bus, 
+train. Once the tourists arrive, there are two ways to get to the hotel: hotel van or taxi. The cost of each type of 
+transportation is given in the table below.
+
+Transportation 	Cost
+Airplane        $ 350
+Bus 	          $ 150
+Train 	        $ 225
+Hotel Van 	    $ 60
+Taxi 	          $ 40
+
+Which data structure can be used to represent all the possible ways to go from Chicago to Miami?
+
+
+Graph
