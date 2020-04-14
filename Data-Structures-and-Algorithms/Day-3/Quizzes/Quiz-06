@@ -1,0 +1,15 @@
+Open a word editor and type the following. (Save every time a new character is entered)
+(C*D)
+
+1.Now perform Undo operation (Ctrl + Z) once. What is the resultant expression after the first Undo operation?
+
+  (C*D
+
+2.Perform Undo operation another 2 times. What is the resultant expression after the 2nd Undo operation?
+
+  (C
+  
+  
+3.Which data structure do you think is used to store the text typed in the word editor?
+
+  Stack
