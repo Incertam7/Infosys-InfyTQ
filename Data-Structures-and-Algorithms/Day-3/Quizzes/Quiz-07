@@ -1,0 +1,17 @@
+John, Mathews and Suzanne are team members working on the same project. The project has one printer which can be shared by all the
+team members. For a team meeting the project manager has asked all the three members to prepare a report individually and carry a 
+print out of the same. Mathews was able to finish the report first and followed by Suzanne and then John. They gave the print 
+command based on the order in which they finished.
+
+
+1. Whose print request will reach the printer first?
+
+  Mathews
+  
+2. Whose print request will reach the printer last?
+
+  John
+  
+3. Which data structure do you think is used to store the print request?
+
+  Queue
