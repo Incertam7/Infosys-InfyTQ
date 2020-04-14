@@ -26,13 +26,14 @@ class Stack:
         else:
             return False
             
-    def pop(self):
+    def pop(self, print_popped_element = False):
         if self.is_empty():
             print("Stack is empty")
         else:
             data = self.__elements[self.__top]
             self.__top -= 1
-            print(data, "has been popped")
+            if print_popped_element:
+                print(data, "has been popped")
             return data
             
     def display(self):
