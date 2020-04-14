@@ -1,0 +1,16 @@
+What does the below function using the Queue data structure do?
+
+def fun(num):
+    if(num == 0):
+        return 0
+    else:
+        queue.enqueue(num % 10)
+        res = fun(num // 10)
+        res = res * 10 + queue.dequeue()
+        return res
+queue = Queue(100)
+print(fun(123))
+
+
+
+321
