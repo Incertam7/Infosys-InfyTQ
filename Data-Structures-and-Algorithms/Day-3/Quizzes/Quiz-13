@@ -1,0 +1,7 @@
+Which is the most appropriate data structure to model the token for cash withdrawal in a bank?
+1st token is provided to the first person who has arrived to withdraw money. The next person is provided the 2nd token etc. 
+The person who got the first token will be serviced first.
+
+
+
+Queue
