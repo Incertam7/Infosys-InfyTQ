@@ -1,0 +1,10 @@
+Based on the number guessing game, answer the following:
+
+Assume that the numbers in the number guessing game are stored in a list and there are 30 of them in the list.
+
+Choose True or False.
+If the number to be guessed is stored at index position 0, the number can be found in one guess.
+
+
+
+True
