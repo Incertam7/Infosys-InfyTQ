@@ -1,0 +1,9 @@
+Based on the number guessing game, answer the following:
+
+Assume that the numbers in the number guessing game are stored in a list and there are 30 of them in the list.
+
+How many guesses will be required to find a number stored at index position 24 in the list?
+
+
+
+25
