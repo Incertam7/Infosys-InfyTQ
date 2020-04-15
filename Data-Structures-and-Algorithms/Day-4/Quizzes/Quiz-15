@@ -1,0 +1,8 @@
+The following values are to be stored in a hash table (arriving in the order shown) using the hash function, h(k) = k % 5.
+81, 20, 34, 42, 21, 45
+Assume that the hash values are stored in ascending order.
+Identify whether collision will occur while mapping the values using the hash function.
+
+
+
+Collision will occur at position 0,1
