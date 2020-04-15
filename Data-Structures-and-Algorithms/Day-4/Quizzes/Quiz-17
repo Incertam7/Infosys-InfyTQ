@@ -1,0 +1,23 @@
+What is the output of the following code snippet?
+input_stack(top-bottom): 2 1 9 6 7
+
+def fun(input_stack):
+    output_queue=Queue(input_stack.get_max_size())
+    temp_queue=Queue(input_stack.get_max_size())
+    while(not input_stack.is_empty()):
+        data=input_stack.pop()
+        if(data%2==0):
+            output_queue.enqueue(data)
+        else:
+            temp_queue.enqueue(data)
+    temp_data=0
+    while(not temp_queue.is_empty()):
+        temp_data+=temp_queue.dequeue()
+        output_queue.enqueue(temp_data)
+    output_queue.display()
+
+Note: Order of displaying the queue elements is from front to rear.
+
+
+
+2 6 1 10 17
