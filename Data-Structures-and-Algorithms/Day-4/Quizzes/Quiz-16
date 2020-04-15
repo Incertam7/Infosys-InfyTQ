@@ -1,0 +1,6 @@
+The following values are to be stored in a hash table: 24, 35, 45, 90, 43.
+Which of the below hash-functions is the best?
+
+
+
+h(k) = k % 4
