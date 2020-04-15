@@ -1,0 +1,29 @@
+Consider the stack given below:
+input_stack(top-bottom): 5 4 3 2 1
+What will be the elements of the stack that is returned by the code snippet given below when input_stack is passed as an argument to function, fun?
+Assume the size of the input_stack to be 5.
+
+def fun(input_stack):
+    num=input_stack.get_max_size()-1
+    num1=1
+    while(num>0):
+        top_element=input_stack.pop()
+        temp_stack=Stack(input_stack.get_max_size())
+        num2=1
+        while(num2<=num1):
+            element=input_stack.pop()
+            temp_stack.push(element+top_element)
+            num2+=1
+        while(not temp_stack.is_empty()):
+            input_stack.push(temp_stack.pop())
+        input_stack.push(top_element)
+        num1+=1
+        num-=1
+    return input_stack
+
+Note: Order of displaying the stack elements is from top to bottom.
+
+
+
+
+5 24 18 12 6
