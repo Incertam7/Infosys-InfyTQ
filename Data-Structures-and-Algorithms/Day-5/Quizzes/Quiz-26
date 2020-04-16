@@ -1,0 +1,7 @@
+Consider the list of numbers given below:
+num_list = [89,43,99,55,87,67]
+Will the number of swaps be equal while sorting in ascending and descending order using bubble sort algorithm?
+
+
+
+No
