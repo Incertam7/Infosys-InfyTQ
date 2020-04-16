@@ -1,0 +1,6 @@
+You have just learnt the selection sort algorithm to sort a list of elements in ascending order.
+What changes should be made in the algorithm to sort the elements in descending order?
+
+
+
+Find the largest element and swap it with the element at the first position in the list
