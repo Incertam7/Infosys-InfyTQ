@@ -7,8 +7,6 @@ def quick_sort(list1, list2, start, end):
     quick_sort(list1, list2, start, pivot - 1)
     quick_sort(list1, list2, pivot + 1, end)
     
-    return [list1, list2]
-    
 def partition(list1, list2, start, end):
     pivot = list2[start]
     i = start + 1
