@@ -26,49 +26,12 @@ class Library:
         return self.__item_list
         
     def sort_item_list_by_author(self, new_item_list):
-        for i in range(0, len(new_item_list) - 1):
-            swapped = False
-            for j in range(0, len(new_item_list) - 1 - i):
-                author1 = new_item_list[j].get_author_name()
-                author2 = new_item_list[j + 1].get_author_name()
-                if author1 > author2:
-                    temp = new_item_list[j]
-                    new_item_list[j] = new_item_list[j + 1]
-                    new_item_list[j + 1] = temp
-                    swapped = True
-            if not swapped:
-                break
-
-        #Python's in built sorter with complex lambda expressions
-        #new_item_list.sort(key = lambda x : ''.join(e for e in x.get_author_name() if e.isalnum()))
-        
+        new_item_list.sort(key = lambda x : ''.join(e for e in x.get_author_name() if e.isalnum()))
         return new_item_list
         
     def sort_items_by_published_year(self):
-        item_list = self.__item_list
-        for i in range(0, len(item_list) - 1):
-            swapped = False
-            for j in range(0, len(item_list) - i - 1):
-                if item_list[j].get_published_year() > item_list[j + 1].get_published_year():
-                    temp = item_list[j]
-                    item_list[j] = item_list[j + 1]
-                    item_list[j + 1] = temp
-                    swapped = True
-            if not swapped:
-                break
-        
-        for i in range(0, len(item_list) - 1):
-            same_year = False
-            for j in range(i, len(item_list) - 1):
-                if item_list[j].get_published_year() == item_list[j + 1].get_published_year():
-                    same_year = True
-                else:
-                    if same_year:
-                        self.sort_item_list_by_author(item_list[i : j])
-                    else:
-                        break
-            
-        return item_list
+        self.sort_item_list_by_author(self.__item_list)
+        self.__item_list.sort(key = lambda x : x.get_published_year())
         
     def add_new_items(self, new_item_list):
         self.__item_list += new_item_list
