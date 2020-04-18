@@ -16,7 +16,7 @@ class Item:
         return self.__published_year
         
     def __str__(self):
-        return self.__item_name + ", " + self.__author_name + ". " + str(self.__published_year)
+        return(self.__item_name + " by " + self.__author_name + " published in " + str(self.__published_year))
 
 class Library:
     def __init__(self, item_list):
@@ -26,9 +26,19 @@ class Library:
         return self.__item_list
         
     def sort_item_list_by_author(self, new_item_list):
-        #Selection sort
-        selection_sort(new_item_list)
-        
+        for i in range(0, len(new_item_list) - 1):
+            swapped = False
+            for j in range(0, len(new_item_list) - 1 - i):
+                author1 = new_item_list[j].get_author_name()
+                author2 = new_item_list[j + 1].get_author_name()
+                if author1 > author2:
+                    temp = new_item_list[j]
+                    new_item_list[j] = new_item_list[j + 1]
+                    new_item_list[j + 1] = temp
+                    swapped = True
+            if not swapped:
+                break
+
         #Python's in built sorter with complex lambda expressions
         #new_item_list.sort(key = lambda x : ''.join(e for e in x.get_author_name() if e.isalnum()))
         
@@ -40,7 +50,9 @@ class Library:
             swapped = False
             for j in range(0, len(item_list) - i - 1):
                 if item_list[j].get_published_year() > item_list[j + 1].get_published_year():
-                    swap(item_list, j, j + 1)
+                    temp = item_list[j]
+                    item_list[j] = item_list[j + 1]
+                    item_list[j + 1] = temp
                     swapped = True
             if not swapped:
                 break
@@ -61,24 +73,6 @@ class Library:
     def add_new_items(self, new_item_list):
         self.__item_list += new_item_list
         self.sort_item_list_by_author(self.__item_list)
-
-def selection_sort(new_item_list):
-    for i in range(0, len(new_item_list)):
-        min_index = find_next_min(new_item_list, i)
-        swap(new_item_list, i, min_index)
-
-def find_next_min(new_item_list, start):
-    next_min = start
-    for i in range(start + 1, len(new_item_list)):
-        if new_item_list[i].get_author_name() < new_item_list[next_min].get_author_name():
-            next_min = i
-            
-    return next_min
-
-def swap(new_item_list, pos1, pos2):
-    temp = new_item_list[pos1]
-    new_item_list[pos1] = new_item_list[pos2]
-    new_item_list[pos2] = temp
 
 #Use different values for item and test your program
 item1 = Item("A Mission In Kashmir", "Andrew Whitehead", 1995)
