@@ -56,42 +56,28 @@ class Stack:
         return msg
 
 def merge_stack(stack1, stack2):
-    temp_list = []
     merged_stack = Stack(stack1.get_max_size() + stack2.get_max_size())
-    
-    data1 = stack1.pop()
-    data2 = stack2.pop()
-    
-    while not stack1.is_empty() and not stack2.is_empty():
-        if data1 > data2:
-            temp_list.append(data1)
-            data1 = stack1.pop()
-        else:
-            temp_list.append(data2)
-            data2 = stack2.pop()
-            
+    merged_list = []
     while not stack1.is_empty():
-        temp_list.append(stack1.pop())
-        
+        merged_list.append(stack1.pop())
     while not stack2.is_empty():
-        temp_list.append(stack2.pop())
-        
-    for i in range(len(temp_list) - 1, -1, -1):
-        merged_stack.push(temp_list[i])
-        
+        merged_list.append(stack2.pop())
+    merged_list.sort()
+    for num in merged_list:
+        merged_stack.push(num)
     return merged_stack
 
 #Pass different values to the function and test your program
 stack2 = Stack(3)
-stack2.push(9)
+stack2.push(8)
 stack2.push(11)
-stack2.push(15)
+#stack2.push(101)
   
 stack1 = Stack(4)
-stack1.push(3)
-stack1.push(7)
-stack1.push(10)
-stack1.push(21)
+stack1.push(4)
+stack1.push(18)
+stack1.push(33)
+#stack1.push(67)
   
 print("The elements in stack1 are:")
 stack1.display()
