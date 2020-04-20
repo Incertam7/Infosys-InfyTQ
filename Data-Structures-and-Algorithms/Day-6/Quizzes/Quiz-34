@@ -1,0 +1,6 @@
+Arrange the following time complexities in increasing order of growth rate.
+O(logn), O(n^2), O(n!), O(n), O(2^n) 
+
+
+
+O(logn), O(n), O(n^2), O(2^n), O(n!)
