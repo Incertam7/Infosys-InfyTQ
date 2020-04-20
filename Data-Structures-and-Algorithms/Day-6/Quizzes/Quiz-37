@@ -1,0 +1,12 @@
+Find the time complexity based on worst case analysis (Big-O) of the following code snippet.
+Assume that there are "c" statements in the while block taking 1 unit of time each for execution.
+
+counter=0
+while(counter < n):
+  .....
+  .....
+  counter+=2
+
+
+
+O(n)
