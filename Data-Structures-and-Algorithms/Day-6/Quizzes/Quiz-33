@@ -1,0 +1,15 @@
+Consider the following scenarios and mention the approach that might be taken to solve each problem.
+
+Scenario-1: You are in a party and suddenly you realize that your friend is missing. Now you want to find your friend in the crowd.
+
+  Brute Force
+  
+  
+Scenario-2: The sales clerk of a medical shop would like to arrange the medicines in separate shelves as per manufacturer so that the time taken to retrieve a particular medicine would be less.
+
+  Divide and Conquer
+  
+  
+Scenario-3:  A set of cities are interconnected as shown in the weighted graph. You are required to visit all the cities once, starting from city "a" and return back to city "a". The trip should be completed in shortest possible time.
+
+  Greedy
