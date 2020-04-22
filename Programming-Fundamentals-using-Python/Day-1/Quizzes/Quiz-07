@@ -1,0 +1,22 @@
+Match the following:
+Questions 	                  Options
+
+True and True 	              True
+
+False and True 	              False
+
+1==1 and 2==1 	              False
+
+1==1 and 2!=1 	              True
+
+True and 1==1 	              True
+
+"Yes" == "Ok" 	              False
+
+not(True and False)           True	
+
+not("Landed"=="Landed" 
+and "Flight"=="F101") 	      True
+
+1==1 and 
+(not(1==1 or 1==0)) 	        False
