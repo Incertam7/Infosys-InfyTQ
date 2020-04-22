@@ -1,0 +1,14 @@
+Write a pseudo-code to represent the logic for converting a given number of days into its equivalent number of seconds.
+Sample Input for No. of days 	Expected Output
+3 	Total number of seconds: 259200
+5 	Total number of seconds: 432000
+
+Note: You can drag and drop the required number of pseudo-code magnets into the pseudo-code box.
+Estimated Time:
+
+
+
+    Pseudo-code
+    input No_Of_Days
+    Seconds= No_Of_Days*24*60*60
+    display "Total number of seconds:",Seconds
