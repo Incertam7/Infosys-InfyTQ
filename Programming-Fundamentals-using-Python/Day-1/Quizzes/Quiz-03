@@ -1,0 +1,11 @@
+Assume, Num1=5, Num2=6.
+Match the output of the relational expressions.
+
+
+
+Categories 	  Options
+Num1 < Num2   True
+Num1<= Num2 	True
+Num1>Num2 	  False
+Num1>=Num2 	  False
+Num1!=Num2    True
