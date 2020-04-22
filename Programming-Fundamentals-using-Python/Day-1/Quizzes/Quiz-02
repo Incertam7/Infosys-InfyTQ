@@ -1,0 +1,11 @@
+Assume, Num1=5, Num2=6.3 min
+
+Match the output of the arithmetic expressions.
+
+
+
+Num1+Num2 		11
+Num1-Num2 		-1
+Num1*Num2 		30
+Num1/Num2 		0
+Num1%Num2 	  5
