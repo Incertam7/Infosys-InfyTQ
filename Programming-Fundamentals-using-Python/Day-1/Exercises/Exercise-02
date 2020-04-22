@@ -1,0 +1,16 @@
+Write a pseudo-code to move from the start (S) to the end (E) in the maze.
+
+Note: You can drag and drop the pseudo-code magnets to the pseudo-code box and create the appropriate pseudo-code.
+Estimated Time:
+
+
+
+for(counter=1, counter<=5, counter=counter+1)
+move Right
+end-for
+for(counter=1, counter<=7, counter=counter+1)
+move Down
+end-for
+for(counter=1, counter<=6, counter=counter+1)
+move Right
+end-for
