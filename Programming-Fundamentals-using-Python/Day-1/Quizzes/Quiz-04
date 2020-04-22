@@ -1,0 +1,9 @@
+Assume, Num1=5, Num2=6.
+Match the output of the logical expressions.
+
+
+
+Categories 	                                  Options
+(Num1 < Num2) and (Num1 != Num2) 	            True
+(Num2 >= Num1) or (Num1 > Num2) 	            True
+not (Num1 == Num2)                            True
