@@ -1,0 +1,15 @@
+Assume that there are five variables with the values given below:
+num1=10
+num2=5
+num3=0
+num4=2
+num5=10
+
+(num1==num5) and ((num2-num4*num3) == (num2-num3))
+
+Which among the expressions provide the same result as the
+above expression?
+
+
+
+not(num3>=num4) and (num5/num2 == num4)
