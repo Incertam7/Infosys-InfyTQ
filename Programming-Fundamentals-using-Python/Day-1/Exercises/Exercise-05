@@ -1,0 +1,20 @@
+Write a pseudo-code to calculate the factorial of a given number.
+Example: factorial of 5 = 5*4*3*2*1 = 120.
+Note 1: Factorial of 0 is 1.
+Note 2: You can drag and drop the required number of pseudo-code magnets into the pseudo-code box.
+
+
+
+
+    Pseudo-code
+    input Number
+    Factorial=1
+    if(Number==0) then
+    Factorial=1
+    else
+    while(Number!=0) do
+    Factorial=Factorial*Number
+    Number=Number-1
+    end-while
+    end-if
+    display Factorial
