@@ -1,0 +1,16 @@
+Write a pseudo-code to recreate the figure given in the expected canvas for the scenario.
+Note: You can drag and drop the pseudo-code magnets to the pseudo-code step boxes and create the appropriate pseudo-code.
+
+
+
+    Pseudo-code
+    display Nightsky
+    display Moon
+    display Rain
+    for(Counter=1, Counter<=3, Counter=Counter+1)
+    add Mountain
+    end-for
+    add Tree
+    for(Counter=1, Counter<=2, Counter=Counter+1)
+    add Sheep
+    end-for
