@@ -1,0 +1,10 @@
+What is the output of the below code snippet?
+
+num1 = 10
+num2 = 5
+num2 *= num1
+print(num2)
+
+
+
+50
