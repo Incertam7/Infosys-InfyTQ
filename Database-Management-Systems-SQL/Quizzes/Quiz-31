@@ -1,0 +1,12 @@
+Consider an application for a training institute. Here, a participant can enroll for multiple courses. A course can be enrolled by many participants. Assessments are conducted for courses and marks are awarded to participants. A participant is allowed to take assessment only once for a course. A participant can enroll for a course only if he/she has undertaken the prerequisite course. The below relations are created for the application.
+
+    Participant (ParticipantId, Name, Address)
+    Course (CourseId, Desc, Duration, Prerequisite)
+    Assessment (Course, Marks, Participant)
+
+Identify the Foreign key(s) for Course relation.
+
+
+
+Foreign key exists
+Prerequisite
