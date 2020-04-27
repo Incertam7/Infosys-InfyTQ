@@ -16,6 +16,8 @@ R1001 	      Reliance 	  Full-Talktime 	Debit
 R1002 	      Airtel 	    Full-Talktime 	Credit
 R1003 	      Airtel 	    Topup-Plan 	    Debit
 
+Identify the primary key for the table RechargePayment.
+
 
 
 RechargeId
