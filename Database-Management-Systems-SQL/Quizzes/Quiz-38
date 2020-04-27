@@ -1,0 +1,11 @@
+Consider the following ER-Diagram depicting a banking scenario and answer the questions below: SQL Commands
+
+BRANCH -|-|----has----O<- ACCOUNT ->|----belongs-to----|<- CUSTOMER
+
+Identify the entities for the relation.
+
+
+
+Branch
+Account
+Customer
