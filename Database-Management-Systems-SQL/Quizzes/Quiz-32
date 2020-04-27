@@ -1,0 +1,9 @@
+Scenario:
+
+Joho Limited, a firm in the digital media and entertainment domain have gaming zones in different locations. Due to growth in business, the firm decides to use relational database to store customer information, product information, and day to day transactional information.
+
+As per the business scenario, a 'Customer' relation is identified with 'CustomerId', 'CustomerName', 'City', 'ContactNumber', 'EmailAddress' as its attributes. While CustomerId, and EmailAddress are unique for every customer, the business requirement says that it is not mandatory for a customer to provide his EmailAddress.Which of the following would best suit the above context?
+
+
+
+CustomerId is the candidate key as well as the primary key
