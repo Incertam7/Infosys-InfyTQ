@@ -1,0 +1,5 @@
+In a relationship between two entities, one and only one instance of the first entity is related to zero or many instances of the second entity. Which of the following symbols in Crows Feet notation represents this relationship?
+
+
+
+B (-|-|------O<-)
