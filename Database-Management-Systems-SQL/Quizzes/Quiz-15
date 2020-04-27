@@ -1,0 +1,5 @@
+The Entity Customer has three candidate keys: a) CustId b) Email and c) ContactNo. Suggest the best primary key for this entity
+
+
+
+CustId
