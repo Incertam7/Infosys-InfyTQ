@@ -1,0 +1,10 @@
+Scenario:
+
+Joho Limited, a firm in the digital media and entertainment domain have gaming zones in different locations. Due to growth in business, the firm decides to use relational database to store customer information, product information, and day to day transactional information.
+
+Quiz 33: One of the requirements read 'games played by the customer are to be tracked with the timestamp'. While trying to implement this requirement, the expert team finds it necessary to have a transaction table that would have the details of the games played by the customer along with the date and time details.The transaction table is named as gaming with attributes TransactionId, CustomerId, GameId, Date, StartingTime, FinishingTime, AmountPayable. Attributes CustomerId and GameId in gaming table can take values that are present for customerid and GameId present in customer and game tables respectively.Which of the following two options would best suit the above context? Select one or more:
+
+
+
+CustomerId and GameId present in gaming table can take duplicate values.
+CustomerId and GameId are foreign keys present in child table gaming, referring to CustomerId and GameId, the primary keys present in parent tables, Customer and Game respectively 
