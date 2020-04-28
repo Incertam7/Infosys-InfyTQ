@@ -1,0 +1,11 @@
+Determine the appropriate command classification for each of the following commands.
+
+
+Command 	  Description 	                                                        Command Type
+
+UPDATE 	    Used to change existing data in tables 	                              DML
+ALTER 	    Modifies existing database objects like tables. 	                    DDL
+REVOKE 	    Remove access to database objects like tables from users 	            DCL
+COMMIT 	    Save database changes and end transaction 	                          TCL
+INSERT 	    Add new rows to database tables 	                                    DML
+TRUNCATE 	  Empty a table by deleting all rows                                    DDL
