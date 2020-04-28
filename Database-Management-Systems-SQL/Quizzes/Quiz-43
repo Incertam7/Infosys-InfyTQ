@@ -1,0 +1,5 @@
+Choose a data type to store weight of a person in kilograms with accuracy of 1 gram. As per wikipedia, Jon Brower Minnoch was the heaviest human ever recorded with a weight of 635kg.
+
+
+
+NUMBER(6,3)
