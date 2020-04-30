@@ -1,0 +1,6 @@
+CREATE TABLE Shopper(
+Shopperid INTEGER(4) PRIMARY KEY,
+ShopperName VARCHAR2(20) NOT NULL,
+Gender VARCHAR(6) CHECK Gender IN('Male', 'Female'),
+MobileNo INTEGER(10) NOT NULL,
+Address VARCHAR(50))
