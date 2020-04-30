@@ -1,0 +1,31 @@
+Department:
+  Candidate Keys:
+    DeptId
+    DeptName
+    HODId
+  Primary Key:
+    DeptId
+  Foreign Key:
+    HODId
+  
+Instructor:
+  Candidate Keys:
+    InstrId
+    Email
+  Primary Key:
+    InstrId
+  Foreign Key:
+    DeptId
+Course
+  Candidate Keys:
+    CId
+    CName
+  Primary Key:
+    CId
+  No foreign keys are present
+Allocation:
+  No candidate Keys are present
+  No primary keys are present
+  Foreign Keys:
+    CId
+    InstrId
