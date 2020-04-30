@@ -1,0 +1,33 @@
+Consider the current table structure and desired table structure.
+
+ActualTable
+Attribute 		Data Type
+EmpId 			NUMBER
+EmpName 		VARCHAR2(30)
+Email 			VARCHAR2(15)
+BatchName 		VARCHAR2(10)
+SectionName 	VARCHAR2(3)
+Stream 			VARCHAR2(10)
+ClassRoom 		NUMBER
+
+ExpectedResult
+Attribute 		Data Type
+EmpId 			NUMBER
+Name 			VARCHAR2(30)
+Email 			VARCHAR2(25)
+BatchName 		VARCHAR2(10)
+SectionName 	VARCHAR2(3)
+Stream 			VARCHAR2(10)
+
+Identify the statements that will achieve the result.
+
+i. ALTER TABLE Trainee DROP COLUMN (ClassRoom);
+ii. ALTER TABLE Trainee RENAME COLUMN EmpName to Name;
+iii. ALTER TABLE Trainee ADD Email VARCHAR2(25)
+iv. ALTER TABLE Trainee DROP (ClassRoom);
+v. ALTER TABLE Trainee MODIFY Email VARCHAR2(25)
+vi. ALTER TABLE Trainee MODIFY COLUMN EmpName to Name;
+
+
+
+ii,iv,v
