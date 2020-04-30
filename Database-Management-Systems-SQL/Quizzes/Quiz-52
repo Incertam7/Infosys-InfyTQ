@@ -1,0 +1,10 @@
+What will be the output of the following command?
+
+CREATE TABLE Emp (
+    Name VARCHAR2(20) PRIMARY KEY,
+    DOB DATE PRIMARY KEY,
+    DeptNo NUMBER(4));
+
+
+
+Error will be thrown
