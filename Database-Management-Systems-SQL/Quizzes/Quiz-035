@@ -1,9 +1,0 @@
-Scenario:
-
-Joho Limited, a firm in the digital media and entertainment domain have gaming zones in different locations. Due to growth in business, the firm decides to use relational database to store customer information, product information, and day to day transactional information.
-
-One of the requirements reads ‘customer can walk into a gaming zone and play any game that fascinates him and obviously a game would also be played by different customers’.What kind of a relationship exists between Customer and Game?
-
-
-
-Many to Many relationship
