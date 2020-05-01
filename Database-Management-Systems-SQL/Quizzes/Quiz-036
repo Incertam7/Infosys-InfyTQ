@@ -1,7 +1,0 @@
-Consider the following scenario of an educational institution. Every department has several instructors. An instructor can be associated with only one department. One among the instructors would act as head of the department. Instructors are allocated to handle various courses. An instructor can handle many courses. A course can be handled by many instructors. Choose the Correct notation that depicts the relationship between:
-
-Department and Instructor:
-
-
-
-Dept -|-|------O<- Instructor
