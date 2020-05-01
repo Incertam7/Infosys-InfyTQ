@@ -1,5 +1,0 @@
-In a many to one relationship, the primary key of one entity acts as foreign key on which side?
-
-
-
-On the side where many relationship is defined
