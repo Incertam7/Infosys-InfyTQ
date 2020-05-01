@@ -1,9 +1,0 @@
-Determine the appropriate constraint classification for each of the following statements.
-
-Statement 																			Constraint Type
-It can be only one in a table 														PRIMARY KEY
-The column can contain either distinct values or NULL values 						UNIQUE
-The domain of the column is 'Male' or 'Female' 										CHECK
-The column must contain a value 													NOT NULL
-The values present in the column must refer another table 							FOREIGN KEY
-The column value should be considered as Zero if no value is inserted				DEFAULT
