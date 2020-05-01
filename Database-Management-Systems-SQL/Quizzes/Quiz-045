@@ -1,6 +1,0 @@
-Which of the following statements are TRUE?
-
-
-
-Scale denotes number of digits allowed after decimal point
-SQL performs rounding if user attempts to store a value that has higher scale than the data type
