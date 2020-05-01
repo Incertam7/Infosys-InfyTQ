@@ -1,9 +1,0 @@
-Scenario:
-
-Joho Limited, a firm in the digital media and entertainment domain have gaming zones in different locations. Due to growth in business, the firm decides to use relational database to store customer information, product information, and day to day transactional information.
-
-Quiz 34: “A specific requirement requires, an attribute in the Game table has to refer to the GameId attribute present in the same table. Such a reference would not be possible and it is decided that the requirement is unfeasible.”Choose whether the above decision of the requirement is True or False with the correct reason.
-
-
-
-False. An attribute in a table/relation can reference another attribute in the same table/relation and this is called Self Referencing Foreign Key
