@@ -1,6 +1,0 @@
-Which statement would add a column CGPA to a table Student which is already created?
-
-
-
-ALTER TABLE Student ADD (CGPA NUMBER(3,1));
-ALTER TABLE Student ADD CGPA NUMBER(3,1);
