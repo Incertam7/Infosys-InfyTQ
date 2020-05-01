@@ -1,0 +1,59 @@
+Identify the Candidate Keys, Primary Key(s) and Foreign Keys if any.
+
+001
+Department:
+  Candidate Keys:
+    DeptId
+    DeptName
+    HODId
+  Primary Key:
+    DeptId
+  Foreign Key:
+    HODId
+  
+Instructor:
+  Candidate Keys:
+    InstrId
+    Email
+  Primary Key:
+    InstrId
+  Foreign Key:
+    DeptId
+Course
+  Candidate Keys:
+    CId
+    CName
+  Primary Key:
+    CId
+  No foreign keys are present
+Allocation:
+  No candidate Keys are present
+  No primary keys are present
+  Foreign Keys:
+    CId
+    InstrId
+
+
+
+002
+Customer:
+	Candidate Keys:
+		CustId + AcctNumber (composite candidate key)
+		EMail + AcctNumber (composite candidate key)
+	Primary Key:
+		CustId + AcctNumber (composite candidate key)
+	Foreign Key:
+		AcctType
+AccountType:
+	Candidate Key:
+		AcctType
+	Primary Key:
+		AcctType
+	No foreign keys are present.
+Transaction:
+	Candidate Key:
+		TId
+	Primary Key:
+		TId
+	Foreign Keys:
+		CustId + AccNum (composite foreign keys)
