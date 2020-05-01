@@ -1,1 +1,149 @@
+041 Which of the following are classifications of SQL?
+	Data Definition Language
+	Data Manipulation Language
 
+
+
+042 Determine the appropriate command classification for each of the following commands.
+Command		Description													Command Type
+UPDATE		Used to change existing data in tables						DML
+ALTER		Modifies existing database objects like tables.				DDL
+REVOKE		Remove access to database objects like tables from users	DCL
+COMMIT		Save database changes and end transaction					TCL
+INSERT		Add new rows to database tables								DML
+TRUNCATE	Empty a table by deleting all rows							DDL
+
+
+
+043 Choose a data type to store weight of a person in kilograms with accuracy of 1 gram. As per wikipedia, Jon Brower Minnoch was the heaviest human ever recorded with a weight of 635kg.
+	NUMBER(6,3)
+
+
+
+044 What is the maximum value that can be stored in NUMERIC(4,2)?
+	99.99
+
+
+
+045 Which of the following statements are TRUE?
+	Scale denotes number of digits allowed after decimal point
+	SQL performs rounding if user attempts to store a value that has higher scale than the data type
+
+
+
+046 Determine data type for these columns. Each data type must be used only once. Choose the most suitable data type in case multiple data types are possible for any column.
+Col Name		Description														Example					Data Type
+Price			Cost of an item in rupees and paise								200.21					NUMBER(5, 2)
+IFSC_Code		A 11 Character alphanumeric code that identifies a bank branch	SBIN0009044				CHAR(11)
+Meeting_Time	Time and date of the meeting									2014/01/01 10:00 AM		TIMESTAMP
+Profile_Image	Image of the employee											---						BLOB
+Book_Title		A text string													Winning					VARCHAR(50)
+Gender			A single character gender code, M or F							M						CHAR(1)
+PIN_Code		Six digit numeric PIN code for any address in India				560100					NUMBER(6)
+Employee_Id		Unique number assigned to every employee						100000					INTEGER
+Date_Of_Birth	Date of Birth of the employee									1990/01/01				DATE
+
+
+
+047 Which of the following statement is TRUE regarding CREATE TABLE statement?
+	Attributes allow NULL values unless NOT NULL clause is provided
+
+
+
+048 Which constraint can be defined only at the column level?
+	NOT NULL
+
+
+
+049 Which requirements should be implemented using a referential integrity constraint?
+	Customer information must be known before anything is sold to him/her
+
+
+
+050 Which of the following statements are TRUE?
+	A Unique constraint allows multiple rows to have NULL value
+	Referential integrity constraint allows NULL value
+
+
+
+051 Which requirements can be implemented using a CHECK constraint?
+	Customer must be greater than 21 years old
+	Customer must have a residence in an Asian Country
+
+
+
+052 What will be the output of the following command?
+CREATE TABLE Emp (
+Name VARCHAR2(20) PRIMARY KEY,
+DOB DATE PRIMARY KEY,
+DeptNo NUMBER(4));
+	Error will be thrown
+
+
+
+053 Consider the creation of the following table: Customer(CustId, AccountNo, CustName) with combination of columns Custid and AccountNo should be UNIQUE. Which one of the following options is CORRECT?
+	Put a table level UNIQUE constraint involving both the columns
+
+
+
+054 Which one of the following DDL statements will create a table? Assume table Customer is already created with appropriate constraints and data types.
+	CREATE TABLE Account(
+	Acctid NUMBER(3),
+    Custid NUMBER(4),
+    Balance NUMBER(8,2),
+    CONSTRAINT ac_aid_pk PRIMARY KEY(Acctid),
+    CONSTRAINT ac_cid_fk FOREIGN KEY(Custid) REFERENCES Customer(Cid));
+
+
+
+055 Consider the current table structure and desired table structure.
+ActualTable
+Attribute 		Data Type
+EmpId 			NUMBER
+EmpName 		VARCHAR2(30)
+Email 			VARCHAR2(15)
+BatchName 		VARCHAR2(10)
+SectionName 	VARCHAR2(3)
+Stream 			VARCHAR2(10)
+ClassRoom 		NUMBER
+
+ExpectedResult
+Attribute 		Data Type
+EmpId 			NUMBER
+Name 			VARCHAR2(30)
+Email 			VARCHAR2(25)
+BatchName 		VARCHAR2(10)
+SectionName 	VARCHAR2(3)
+Stream 			VARCHAR2(10)
+
+Identify the statements that will achieve the result.
+i. ALTER TABLE Trainee DROP COLUMN (ClassRoom);
+ii. ALTER TABLE Trainee RENAME COLUMN EmpName to Name;
+iii. ALTER TABLE Trainee ADD Email VARCHAR2(25)
+iv. ALTER TABLE Trainee DROP (ClassRoom);
+v. ALTER TABLE Trainee MODIFY Email VARCHAR2(25)
+vi. ALTER TABLE Trainee MODIFY COLUMN EmpName to Name;
+	
+	ii,iv,v
+
+
+
+056 Determine the appropriate constraint classification for each of the following statements.
+Statement 																			Constraint Type
+It can be only one in a table 														PRIMARY KEY
+The column can contain either distinct values or NULL values 						UNIQUE
+The domain of the column is 'Male' or 'Female' 										CHECK
+The column must contain a value 													NOT NULL
+The values present in the column must refer another table 							FOREIGN KEY
+The column value should be considered as Zero if no value is inserted				DEFAULT
+
+
+
+057 Which statement would add a column CGPA to a table Student which is already created?
+	ALTER TABLE Student ADD (CGPA NUMBER(3,1));
+	ALTER TABLE Student ADD CGPA NUMBER(3,1);
+
+
+
+058 Which statement is TRUE regarding ALTER statement?
+	ALTER table can be used to change data type of an existing column if column values are empty
