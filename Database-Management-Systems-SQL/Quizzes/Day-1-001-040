@@ -1,0 +1,164 @@
+001 A Database Management System is
+	Collection of programs to access data
+
+
+
+002 DBMS is an interface between
+	Database application and database
+
+
+
+003 Which of the following are disadvantages of file system to store data?
+	Data redundancy and inconsistency
+	Difficulty in accessing data
+	Data isolation is not present
+
+
+
+004 Which of the following features are provided by DBMS?
+	Maintain accuracy of data
+	Utilities for performance analysis and logging
+	Ensure modifications are successful or not done at all
+	Recovery mechanism for data
+
+
+
+005 Which of the following is an advantage of database management approach?
+	Data can be accessed by multiple programs
+
+
+
+006 Which of the following features are provided by DBMS?
+	Protect data from system crash
+	Authorized access
+
+
+
+007 A relational database consists of a collection of
+	Tables
+
+
+
+008 A relationship among a set of values in a table is represented by a
+	Row
+
+
+
+009 The set of permitted values of an attribute is called
+	Domain
+
+
+
+010 The attribute value that is currently unknown is
+	NULL
+
+
+
+011 Consider the relation SalesMan(SId, SName, Location)
+SID	SNAME	LOCATION
+1	Peter	London
+2	Michael	Paris
+3	John	Mumbai
+4	Harry	London
+What is the cardinality of the above relation?
+	4
+
+
+
+012 Consider the relation SalesMan(SId, SName, Location)
+SID	SNAME 	LOCATION
+1 	Peter 	London
+2 	Michael Paris
+3 	John 	Mumbai
+4 	Harry 	London
+What is the degree of the above relation?
+	3
+
+
+
+013 The relationship between the two tables are created using __________
+	Foreign Key
+
+
+
+014 Which of the following statement(s) is/are FALSE about primary key?
+	There can be more than one primary key for a table
+	Columns with string data types cannot be made Primary Key because they are large
+
+
+
+015 The Entity Customer has three candidate keys: a) CustId b) Email and c) ContactNo. Suggest the best primary key for this entity
+	CustId
+
+
+
+016
+RechargePlan
+Operator	Plans			Amount	RechargeType
+Reliance	Full-Talktime	150		Special
+Airtel		Full-Talktime	140		Special
+Docomo		Topup-Plan		180		Topup
+Airtel		Topup-Plan		200		Topup
+MTS			Topup-Plan		150		Regular
+MTS			3G-Plan			300		Regular
+
+RechargePayment
+RechargeId	Operator	Plans			CardType
+R1001		Reliance	Full-Talktime	Debit
+R1002		Airtel		Full-Talktime	Credit
+R1003		Airtel		Topup-Plan		Debit
+
+Identify the candidate key for the RechargePlan table
+	Operator, Plans
+
+
+
+017
+RechargePlan
+Operator	Plans			Amount	RechargeType
+Reliance	Full-Talktime	150		Special
+Airtel		Full-Talktime	140		Special
+Docomo		Topup-Plan		180		Topup
+Airtel		Topup-Plan		200		Topup
+MTS			Topup-Plan		150		Regular
+MTS			3G-Plan			300		Regular
+
+RechargePayment
+RechargeId	Operator	Plans			CardType
+R1001		Reliance	Full-Talktime	Debit
+R1002		Airtel		Full-Talktime	Credit
+R1003		Airtel		Topup-Plan		Debit
+
+Identify the primary key for the table RechargePayment.
+	RechargeId
+
+
+
+018
+RechargePlan
+Operator	Plans			Amount	RechargeType
+Reliance	Full-Talktime	150		Special
+Airtel		Full-Talktime	140		Special
+Docomo		Topup-Plan		180		Topup
+Airtel		Topup-Plan		200		Topup
+MTS			Topup-Plan		150		Regular
+MTS			3G-Plan			300		Regular
+
+RechargePayment
+RechargeId	Operator	Plans			CardType
+R1001		Reliance	Full-Talktime	Debit
+R1002		Airtel		Full-Talktime	Credit
+R1003		Airtel		Topup-Plan		Debit
+
+Identify the foreign key for the table RechargePayment.
+	Operator, Plans
+
+
+
+019 In a relationship between two entities, one and only one instance of the first entity is related to zero or many instances of the second entity. Which of the following symbols in Crows Feet notation represents this relationship?
+	B (-|-|------O<-)
+
+
+
+020 In a many to one relationship, the primary key of one entity acts as foreign key on which side?
+	On the side where many relationship is defined
