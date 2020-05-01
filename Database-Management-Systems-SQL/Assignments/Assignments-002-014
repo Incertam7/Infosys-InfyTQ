@@ -1,0 +1,98 @@
+002.
+CREATE TABLE Shopper(
+Shopperid INTEGER(4) PRIMARY KEY,
+ShopperName VARCHAR2(20) NOT NULL,
+Gender VARCHAR(6) CHECK Gender IN('Male', 'Female'),
+MobileNo INTEGER(10) NOT NULL,
+Address VARCHAR(50))
+
+
+
+003.
+ALTER TABLE Shopper MODIFY MobileNo VARCHAR2(15)
+
+
+
+004.
+CREATE TABLE Article(
+ArCode CHAR(5) PRIMARY KEY,
+CHECK(ArCode LIKE 'A%'),
+ArName VARCHAR2(30) NOT NULL,
+Rate NUMBER(8,2),
+Quantity NUMBER(4) DEFAULT 0,
+CHECK(Quantity >= 0),
+Class CHAT(1),
+CHECK(Class IN ('A', 'B', 'C')))
+
+
+
+005.
+CREATE TABLE Store(
+Name VARCHAR2(20) PRIMARY KEY,
+Location VARCHAR2(30) NOT NULL,
+ManagerName VARCHAR2(30) UNIQUE)
+
+
+
+006.
+ALTER TABLE Store RENAME COLUMN Name TO StoreName
+
+
+
+007.
+CREATE TABLE Bill(
+BillNo NUMBER PRIMARY KEY,
+StoreName VARCHAR2(20) REFERENCES Store(StoreName),
+Shopperid NUMBER REFERENCES Shopper(ShopperId),
+ArCode CHAR(5) REFERENCES Article(ArCode),
+Amount NUMBER,
+BillDate DATE,
+Quantity NUMBER(4) DEFAULT 1,
+CHECK(Quantity > 0))
+
+
+
+008.
+CREATE TABLE Supplier(
+SupplierId VARCHAR2(6) PRIMARY KEY,
+Name VARCHAR2(30),
+ContactNo VARCHAR2(15) NOT NULL,
+Emailid VARCHAR2(30))
+
+
+
+009.
+ALTER TABLE Supplier ADD City VARCHAR2(10)
+
+
+
+010.
+ALTER TABLE Supplier DROP (Emailid)
+
+
+
+011.
+CREATE TABLE City(
+City VARCHAR2(20) UNIQUE)
+
+
+
+012.
+ALTER TABLE City DROP (City)
+
+
+
+013.
+CREATE TABLE Address(
+HouseNo NUMBER,
+Street VARCHAR2(30),
+City VARCHAR2(20) REFERENCES City(City),
+Zip NUMBER(6),
+CHECK(Zip >= 0),
+State VARCHAR2(5),
+CONSTRAINT address_pk PRIMARY KEY(HouseNo, Street, City));
+
+
+
+014.
+ALTER TABLE Address MODIFY State VARCHAR2(20)
