@@ -1,5 +1,0 @@
-Consider the creation of the following table: Customer(CustId, AccountNo, CustName) with combination of columns Custid and AccountNo should be UNIQUE. Which one of the following options is CORRECT?
-
-
-
-Put a table level UNIQUE constraint involving both the columns
