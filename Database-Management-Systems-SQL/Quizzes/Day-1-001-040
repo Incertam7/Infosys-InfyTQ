@@ -162,3 +162,166 @@ Identify the foreign key for the table RechargePayment.
 
 020 In a many to one relationship, the primary key of one entity acts as foreign key on which side?
 	On the side where many relationship is defined
+
+
+
+021 A many to many relationship between two entities usually results in how many tables?
+	Three
+
+
+
+022 Consider an application for Club membership. There are many clubs at different locations. A club can have many members. Each member belonging to a particular club has a unique identity number. The member id can be same for different clubs. The below relations are created.
+Club (ClubId, Name, Location)
+Member (ClubId, MemberId, Name, Address)
+Identify the Primary key for Club relation.
+	ClubId
+
+
+
+023 Consider an application for Club membership. There are many clubs at different locations. A club can have many members. Each member belonging to a particular club has a unique identity number. The member id can be same for different clubs. The below relations are created.
+Club (ClubId, Name, Location)
+Member (ClubId, MemberId, Name, Address)
+Identify the Primary key for Member relation.
+	ClubId
+	MemberId
+
+
+
+024 Consider an application for Club membership. There are many clubs at different locations. A club can have many members. Each member belonging to a particular club has a unique identity number. The member id can be same for different clubs. The below relations are created.
+Club (ClubId, Name, Location)
+Member (ClubId, MemberId, Name, Address)
+Identify the Foreign key for Club relation.
+	Foreign key does not exist
+
+
+
+025 Consider an application for Club membership. There are many clubs at different locations. A club can have many members. Each member belonging to a particular club has a unique identity number. The member id can be same for different clubs. The below relations are created.
+Club (ClubId, Name, Location)
+Member (ClubId, MemberId, Name, Address)
+Identify the Foreign key for Member relation.
+	Foreign key exists
+	ClubId
+
+
+
+026 Consider an application for a training institute. Here, a participant can enroll for multiple courses. A course can be enrolled by many participants. Assessments are conducted for courses and marks are awarded to participants. A participant is allowed to take assessment only once for a course. A participant can enroll for a course only if he/she has undertaken the prerequisite course. The below relations are created for the application.
+Participant (ParticipantId, Name, Address)
+Course (CourseId, Desc, Duration, Prerequisite)
+Assessment (Course, Marks, Participant)
+Identify the Primary key for Participant relation.
+	ParticipantId
+
+
+
+027 Consider an application for a training institute. Here, a participant can enroll for multiple courses. A course can be enrolled by many participants. Assessments are conducted for courses and marks are awarded to participants. A participant is allowed to take assessment only once for a course. A participant can enroll for a course only if he/she has undertaken the prerequisite course. The below relations are created for the application.
+Participant (ParticipantId, Name, Address)
+Course (CourseId, Desc, Duration, Prerequisite)
+Assessment (Course, Marks, Participant)
+Identify the Primary key for Assessment relation.
+	Course
+	Participant
+
+
+
+028 Consider an application for a training institute. Here, a participant can enroll for multiple courses. A course can be enrolled by many participants. Assessments are conducted for courses and marks are awarded to participants. A participant is allowed to take assessment only once for a course. A participant can enroll for a course only if he/she has undertaken the prerequisite course. The below relations are created for the application.
+Participant (ParticipantId, Name, Address)
+Course (CourseId, Desc, Duration, Prerequisite)
+Assessment (Course, Marks, Participant)
+Identify the Primary key for Course relation.
+	CourseId
+
+
+
+029 Consider an application for a training institute. Here, a participant can enroll for multiple courses. A course can be enrolled by many participants. Assessments are conducted for courses and marks are awarded to participants. A participant is allowed to take assessment only once for a course. A participant can enroll for a course only if he/she has undertaken the prerequisite course. The below relations are created for the application.
+Participant (ParticipantId, Name, Address)
+Course (CourseId, Desc, Duration, Prerequisite)
+Assessment (Course, Marks, Participant)
+Identify the Foreign key(s) for Participant relation.
+	Foreign key does not exist
+
+
+
+030 Consider an application for a training institute. Here, a participant can enroll for multiple courses. A course can be enrolled by many participants. Assessments are conducted for courses and marks are awarded to participants. A participant is allowed to take assessment only once for a course. A participant can enroll for a course only if he/she has undertaken the prerequisite course. The below relations are created for the application.
+Participant (ParticipantId, Name, Address)
+Course (CourseId, Desc, Duration, Prerequisite)
+Assessment (Course, Marks, Participant)
+Identify the Foreign key(s) for Assessment relation.
+	Foreign key exists
+	Course
+	Participant
+
+
+
+031 Consider an application for a training institute. Here, a participant can enroll for multiple courses. A course can be enrolled by many participants. Assessments are conducted for courses and marks are awarded to participants. A participant is allowed to take assessment only once for a course. A participant can enroll for a course only if he/she has undertaken the prerequisite course. The below relations are created for the application.
+Participant (ParticipantId, Name, Address)
+Course (CourseId, Desc, Duration, Prerequisite)
+Assessment (Course, Marks, Participant)
+Identify the Foreign key(s) for Course relation.
+	Foreign key exists
+	Prerequisite
+
+
+
+032 Scenario:
+Joho Limited, a firm in the digital media and entertainment domain have gaming zones in different locations. Due to growth in business, the firm decides to use relational database to store customer information, product information, and day to day transactional information.
+As per the business scenario, a 'Customer' relation is identified with 'CustomerId', 'CustomerName', 'City', 'ContactNumber', 'EmailAddress' as its attributes. While CustomerId, and EmailAddress are unique for every customer, the business requirement says that it is not mandatory for a customer to provide his EmailAddress.Which of the following would best suit the above context?
+	CustomerId is the candidate key as well as the primary key
+
+
+
+033 Scenario:
+Joho Limited, a firm in the digital media and entertainment domain have gaming zones in different locations. Due to growth in business, the firm decides to use relational database to store customer information, product information, and day to day transactional information.
+One of the requirements read 'games played by the customer are to be tracked with the timestamp'. While trying to implement this requirement, the expert team finds it necessary to have a transaction table that would have the details of the games played by the customer along with the date and time details.The transaction table is named as gaming with attributes TransactionId, CustomerId, GameId, Date, StartingTime, FinishingTime, AmountPayable. Attributes CustomerId and GameId in gaming table can take values that are present for customerid and GameId present in customer and game tables respectively.Which of the following two options would best suit the above context? Select one or more:
+	CustomerId and GameId present in gaming table can take duplicate values.
+	CustomerId and GameId are foreign keys present in child table gaming, referring to CustomerId and GameId, the primary keys present in parent tables, Customer and Game respectively 
+
+
+
+034 Scenario:
+Joho Limited, a firm in the digital media and entertainment domain have gaming zones in different locations. Due to growth in business, the firm decides to use relational database to store customer information, product information, and day to day transactional information.
+“A specific requirement requires, an attribute in the Game table has to refer to the GameId attribute present in the same table. Such a reference would not be possible and it is decided that the requirement is unfeasible.”Choose whether the above decision of the requirement is True or False with the correct reason.
+	False. An attribute in a table/relation can reference another attribute in the same table/relation and this is called Self Referencing Foreign Key
+
+
+
+035 Scenario:
+Joho Limited, a firm in the digital media and entertainment domain have gaming zones in different locations. Due to growth in business, the firm decides to use relational database to store customer information, product information, and day to day transactional information.
+One of the requirements reads ‘customer can walk into a gaming zone and play any game that fascinates him and obviously a game would also be played by different customers’.What kind of a relationship exists between Customer and Game?
+	Many to Many relationship
+
+
+
+036 Consider the following scenario of an educational institution. Every department has several instructors. An instructor can be associated with only one department. One among the instructors would act as head of the department. Instructors are allocated to handle various courses. An instructor can handle many courses. A course can be handled by many instructors. Choose the Correct notation that depicts the relationship between:
+Department and Instructor:
+	Dept -|-|------O<- Instructor
+
+
+
+037 Consider the following scenario of an educational institution. Every department has several instructors. An instructor can be associated with only one department. One among the instructors would act as head of the department. Instructors are allocated to handle various courses. An instructor can handle many courses. A course can be handled by many instructors. Choose the Correct notation that depicts the relationship between:
+Instructor and Courses:
+	Instructor ->|--------|<- Courses
+
+
+
+038 Consider the following ER-Diagram depicting a banking scenario and answer the questions below:
+BRANCH -|-|----has----O<- ACCOUNT ->|----belongs-to----|<- CUSTOMER
+Identify the entities for the relation.
+	Branch
+	Account
+	Customer
+
+
+
+039 Consider the following ER-Diagram depicting a banking scenario and answer the questions below:
+BRANCH -|-|----has----O<- ACCOUNT ->|----belongs-to----|<- CUSTOMER
+Identify the relationships present in the ER-Diagram.
+	Has
+	Belongs to
+
+
+
+040 Consider the following ER-Diagram depicting a banking scenario and answer the questions below:
+BRANCH -|-|----has----O<- ACCOUNT ->|----belongs-to----|<- CUSTOMER
+Identify the cardinality of all identified relationships.
+	1:M
+	M:N
