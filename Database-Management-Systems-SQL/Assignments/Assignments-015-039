@@ -9,3 +9,38 @@ INSERT INTO article VALUES('A1001', 'Mouse', 500, 0, 'C')
 
 
 017
+INSERT INTO Store VALUES('Loyal World', 'Infy Campus, Mysore', 'Rohan Kumar')
+
+
+
+018
+INSERT INTO Bill VALUES(1001, 'Loyal World', 101, 'A1001', 1000, '20-OCT-15', 2)
+
+
+
+019
+INSERT INTO Supplier VALUES('S501', 'Avaya Ltd', 9012345678, 'Mysore')
+
+
+
+020
+SELECT descr, price FROM item WHERE descr LIKE '%Hard disk%'
+
+
+
+021
+SELECT quotationid, sname, itemcode, quotedprice, qdate, qstatus FROM Quotation WHERE NOT qstatus = 'Accepted'
+
+
+
+022
+SELECT designation, salary FROM EmpDetails WHERE designation IN ('Manager', 'Billing Staff')
+
+
+
+023
+SELECT roid, location FROM retailoutlet WHERE managerid IS NULL
+
+
+
+024
