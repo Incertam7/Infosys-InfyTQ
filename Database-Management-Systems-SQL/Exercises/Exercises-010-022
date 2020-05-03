@@ -24,3 +24,18 @@ SELECT DISTINCT Category FROM Product
 
 
 015
+SELECT prodid, pdesc, category, discount FROM Product WHERE category = 'Apparel'
+
+
+
+016
+SELECT prodid, pdesc, category, discount FROM Product WHERE pdesc IS NULL
+
+
+
+017
+SELECT prodid, pdesc, category, discount FROM Product WHERE category = 'Apparel' AND discount > 5
+
+
+
+018
