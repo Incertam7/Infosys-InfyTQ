@@ -44,3 +44,5 @@ SELECT roid, location FROM retailoutlet WHERE managerid IS NULL
 
 
 024
+SELECT orderid, quotationid, status FROM orders WHERE orderdate BETWEEN '1-DEC-2014' AND '1-JAN-2015' 
+CHECK AGAIN!!!!!!
