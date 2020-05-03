@@ -9,3 +9,18 @@ INSERT INTO Product VALUES (110, 'Bat', 50, 'Sports', NULL)
 
 
 012
+SELECT * FROM Product
+
+
+
+013
+SELECT ProdId, Price, Category FROM Product
+
+
+
+014
+SELECT DISTINCT Category FROM Product
+
+
+
+015
