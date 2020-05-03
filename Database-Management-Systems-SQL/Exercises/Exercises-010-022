@@ -54,3 +54,9 @@ UPDATE Salesman SET sname = 'Jenny', location = 'Bristol' WHERE sid = 3
 
 
 021
+DELETE FROM SaleDetail WHERE saleid = 1004
+
+
+
+022
+DELETE FROM SaleDetail WHERE quantity > 5
