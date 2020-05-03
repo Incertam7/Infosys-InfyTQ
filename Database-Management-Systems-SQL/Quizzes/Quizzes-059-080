@@ -81,3 +81,67 @@ The above query will display the names from the Emp table whose __________
 
 
 068
+Consider the following table structure and content for 'Student' table:
+Attribute	Data type		Constraint
+Id			INTEGER			NOT NULL
+Name		VARCHAR2(10)
+Gender		CHAR(1)			Gender IN('M','F')
+DOJ			DATE			Default SYSDATE
+
+Id	Name	Gender	DOJ
+1	Alice	M		22-JAN-15
+
+Which of the following UPDATE statements will execute successfully for the Student table?
+	UPDATE Student SET Gender = 'F', DOJ = NULL WHERE Name = 'Alice'
+
+
+
+069
+Consider the 'Student' table as :
+Attribute	Data type		Constraint
+Id			INTEGER			NOT NULL
+Name		VARCHAR2(10) 	
+Gender		CHAR(1) 	
+DOJ			DATE			DEFAULT SYSDATE
+
+Id	Name	Gender	DOJ
+1	Alice	F		22-JAN-15
+2	Alan	M		20-JAN-15
+3	Harry	M		01-FEB-15
+4	Tina	F		20-JAN-15
+
+Which of the following UPDATE statements will Update 2 rows for the Student table?
+	UPDATE Student SET DOJ = SYSDATE WHERE Gender = 'M'
+
+
+
+070
+Consider the 'Student' table as :
+Attribute	Data type	Constraint
+Id			INTEGER		NOT NULL
+Name		VARCHAR2(10) 	
+Gender		CHAR(1) 	
+DOJ			DATE		DEFAULT SYSDATE
+Marks		Number(5,2) 	
+
+Id	Name	Gender	DOJ			Marks
+1	Alice	F		22-JAN-15	95
+2	Alan	M		20-JAN-15	85
+3	Harry	M		01-FEB-15	65
+4	Tina	F		20-JAN-15	75
+
+UPDATE Student SET DOJ = '01-FEB-15', Gender = 'F' WHERE Gender = 'M' AND Name = 'Alan'
+UPDATE Student SET Marks = Marks-10, Name = 'Alice' WHERE Marks > 70 AND DOJ < '31-JAN-2015'
+Which of the following 2 statements will be true after execution of the above Update queries in that order?
+	There is only 1 Male student
+	Exactly 2 Students will have marks greater than 80
+
+
+
+071
+Which of the following columns in a table cannot be updated?
+	A primary key column which also serves as foreign key reference in another table
+
+
+
+072
