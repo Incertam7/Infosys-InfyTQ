@@ -162,3 +162,75 @@ Id	Name	Gender	DOJ
 
 
 073
+What is true about the INSERT statement in Oracle SQL?
+	An INSERT statement can never insert a row that violates a constraint
+
+
+
+074
+One INSERT statement can be used to insert
+	Any number of rows
+
+
+
+075
+Student Table
+Attribute	Data Type
+Id			INTEGER
+Name		VARCHAR2(10)
+Gender		CHAR(1)
+DOJ			DATE
+
+Which of the following statements will execute successfully?
+	INSERT INTO Student VALUES(1, 'Alan', 'M', '20-JAN-2015')
+
+
+
+076
+Student Table
+Attribute	Data Type
+Id			INTEGER
+Name		VARCHAR2(10)
+Gender		CHAR(1)
+DOJ			DATE
+
+Which of the following statements will execute successfully?
+	INSERT INTO Student(Id, Name, Gender, DOJ) VALUES(1, 'Alice', 'F', '20-JAN-2015');
+	INSERT INTO Student(Id, DOJ, Name, Gender) VALUES(1, SYSDATE, 'Alice', 'F');
+
+
+
+077
+SQL defines a limit on number of conditions that can be put in WHERE clause?
+	False
+
+
+
+078
+BETWEEN operator can be replaced by ________.
+IN operator can be replaced by ____________.
+	AND, OR
+
+
+
+079
+Which of the following is TRUE about the DELETE statement?
+	WHERE clause is optional in a DELETE statement
+	A row with primary key value which also serves as foreign key reference in another table cannot be deleted
+
+
+
+080
+The structure and data for Student table is provided below. Which of the statements will delete student with id 1?
+
+Attribute	Data Type	Constraint
+Id			INTEGER		NOT NULL
+Name		VARCHAR2(10)
+Gender		CHAR(1)		CHECK(Gender IN('M', 'F'))
+DOJ			DATE		DEFAULT SYSDATE
+
+Id	Name	Gender	DOJ
+1	Alice	M		22-JAN-15
+2	Andy	F		22-JAN-15
+
+	DELETE FROM Student WHERE Id = 1
