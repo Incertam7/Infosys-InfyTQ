@@ -41,3 +41,22 @@ Which INSERT statement will execute successfully on the modified STUDENT table?
 
 
 062
+Which one of these is used with SELECT clause to fetch all columns from a table?
+	*
+
+
+
+063
+Is it mandatory for alias of a column to have a name different than the name of column being aliased?
+	No
+
+
+
+064
+Which of the following statements are TRUE about DISTINCT keyword?
+	DISTINCT removes duplicates based on all the columns in the SELECT clause
+	Usage of DISTINCT should be avoided as far as possible due to performance issues
+
+
+
+065
