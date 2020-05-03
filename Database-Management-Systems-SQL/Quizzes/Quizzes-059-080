@@ -145,3 +145,20 @@ Which of the following columns in a table cannot be updated?
 
 
 072
+The student who does not have any DOJ needs to be deleted from the Student table. Which of the following DELETE statements will meet this requirement?
+
+Attribute	Data Type	Constraint
+Id			INTEGER		NOT NULL
+Name		VARCHAR2(10)
+Gender		CHAR(1)		CHECK(Gender IN('M', 'F'))
+DOJ			DATE		DEFAULT SYSDATE
+
+Id	Name	Gender	DOJ
+1	Alice	M		22-JAN-15
+2	Andy	F		Null
+
+	DELETE FROM Student WHERE DOJ IS NULL;
+
+
+
+073
