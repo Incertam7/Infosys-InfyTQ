@@ -60,3 +60,24 @@ Which of the following statements are TRUE about DISTINCT keyword?
 
 
 065
+Which of the following statement is true regarding application of WHERE clause?
+	Can be used on all columns
+
+
+
+066
+Which of the following conditions are equivalent?
+	"C1 >= 10" and "NOT C1 < 10"
+	"C1 IN (1,2)" and "C1 = 1 OR C1 = 2"
+
+
+
+067
+Consider a table Emp(Name,Salary)
+SELECT Name FROM Emp WHERE Salary BETWEEN 1000 AND 2000;
+The above query will display the names from the Emp table whose __________
+	Salary is >=1000 and Salary <= 2000
+
+
+
+068
