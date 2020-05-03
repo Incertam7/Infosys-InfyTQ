@@ -1,0 +1,11 @@
+010
+INSERT INTO Salesman VALUES (11, 'Elizabeth', 'London')
+
+
+
+011
+INSERT INTO Product VALUES (110, 'Bat', 50, 'Sports', NULL)
+
+
+
+012
