@@ -39,3 +39,18 @@ SELECT prodid, pdesc, category, discount FROM Product WHERE category = 'Apparel'
 
 
 018
+UPDATE Product SET discount = 25 WHERE category = 'Sports'
+
+
+
+019
+UPDATE Product SET price = 50 WHERE category = 'Apparel' AND pdesc = 'Trouser'
+
+
+
+020
+UPDATE Salesman SET sname = 'Jenny', location = 'Bristol' WHERE sid = 3
+
+
+
+021
