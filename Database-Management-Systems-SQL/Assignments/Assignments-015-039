@@ -1,0 +1,11 @@
+015
+INSERT INTO Shopper VALUES(101, 'Mark Jane', 'Male', 1234567890, 'Allen Street, New York')
+
+
+
+016
+INSERT INTO article VALUES('A1001', 'Mouse', 500, 0, 'C')
+
+
+
+017
