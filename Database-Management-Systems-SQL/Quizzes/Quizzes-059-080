@@ -1,0 +1,43 @@
+059
+Student Table
+Attribute	Data Type
+Id 			INTEGER
+Name 		VARCHAR2(10)
+Gender 		CHAR(1)
+DOJ 		DATE
+Which of the following statements will execute successfully?
+	INSERT INTO Student VALUES(1, 'Alice', 'F', NULL);
+
+
+
+060
+Student Table
+Attribute	Datatype		Constraint
+Id			INTEGER
+Name		VARCHAR2(10)	NOT NULL
+Gender		CHAR(1)
+DOJ			DATE			DEFAULT SYSDATE
+Which of the following statements will execute successfully?
+	INSERT INTO Student(Id, Name, Gender, DOJ) VALUES(1, 'Alice', 'F', NULL);
+	INSERT INTO Student(Id, Name) VALUES(1, 'Alice');
+
+
+
+061
+Consider an empty Student table provided below:
+Attribute	Data Type
+Id			INTEGER
+Name		VARCHAR2(10)
+Age			INTEGER
+DOB			DATE
+Following ALTER statements are successfully executed on this table sequentially.
+ALTER TABLE Student DROP (DOB, Age);
+ALTER TABLE Student ADD Gender CHAR(1);
+ALTER TABLE Student MODIFY NAME NUMBER;
+ALTER TABLE Student RENAME COLUMN Id TO StudentId;
+Which INSERT statement will execute successfully on the modified STUDENT table?
+	INSERT INTO Student VALUES(1, 3, 'M')
+
+
+
+062
