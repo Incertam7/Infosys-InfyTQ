@@ -23,8 +23,6 @@ SELECT NVL(pdesc, 'No Description') AS PDESC, discount FROM Product
 027
 SELECT prodid, category, price, discount FROM Product ORDER BY category DESC, price
 
-(the expected output is empty... WTF)
-
 
 
 028
