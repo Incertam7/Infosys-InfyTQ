@@ -160,3 +160,62 @@ Which statement shows the department ID, minimum salary, and maximum salary paid
 
 
 097
+Consider the following record of Customer table:
+
+FIRSTNAME	LASTNAME
+Martin		Grove
+
+What will be the output of the below query:
+SELECT CONCAT(LOWER(LastName),UPPER(FirstName)) "FULLNAME" FROM Customer
+	groveMARTIN
+
+
+
+098
+Table T exists with single column A having 6 rows with values - 100, 200, NULL, 300, 400, NULL. What is the output of the following query?
+SELECT AVG(A) FROM T;
+	250
+
+
+
+099
+Table T exists with single column A having 4 rows with values – 100, 200, NULL, 300. What is the output of the following query?
+SELECT MIN(A) FROM T;
+	100
+
+
+
+100
+Which is the default ordering if ORDER BY is NOT provided?
+	There is no default Ordering
+
+
+
+101
+Computer table has CompId, Make, Model and MYear attributes. Which of the following statement will not execute successfully?
+	SELECT CompId FROM Computer ORDER BY 2
+
+
+
+102
+Which of the following statements are FALSE about ORDER BY clause?
+	Only one column can be used to define the sort order in an order by clause
+	Descending order can be defined with the DESC keyword or not providing any keyword
+
+
+
+103
+Which of the following statement is TRUE about Group By clause?
+	Columns specified in SELECT clause must be part of the GROUP BY clause
+
+
+
+104
+In which of the following circumstances a GROUP BY clause is mandatory?
+	SELECT query having one aggregate function along with other columns
+
+
+
+105
+A query that has a nested aggregate function
+	must have a GROUP BY clause
