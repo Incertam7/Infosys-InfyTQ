@@ -39,3 +39,166 @@ WHERE ABS(qtyonhand - reorderlevel) > 50
 
 
 045
+SELECT itemcode, AVG(qtyavailable) AS "Average Quantity"
+FROM RetailStock
+GROUP BY itemcode
+HAVING AVG(qtyavailable) < 75
+
+
+
+046
+SELECT pymtmode, COUNT(*) AS pymtcount
+FROM Orders
+WHERE pymtdate < '01-Jan-2015'
+GROUP BY pymtmode
+HAVING COUNT(*) > 1
+
+
+
+047
+SELECT sname, AVG(quotedprice) AS "Average quoted price"
+FROM Quotation
+WHERE qstatus IN 'Closed'
+GROUP BY sname
+HAVING AVG(quotedprice) > 500
+
+
+
+048
+SELECT itemtype, category, ROUND(AVG(price), 2) AS "Average item price"
+FROM Item
+WHERE itemtype IN ('FMCG', 'Computer')
+GROUP BY itemtype, category
+HAVING AVG(price) < 2000
+
+
+
+049
+SELECT job, AVG(sal) AS "Average Salary"
+FROM Emp
+WHERE job in ('MANAGER', 'ANALYST')
+GROUP BY job
+HAVING AVG(sal) > 1500
+
+
+
+050
+SELECT job, deptno, AVG(sal) AS avgsalary
+FROM Emp
+WHERE deptno IN (10, 20) AND sal > 2000
+GROUP BY job, deptno
+HAVING AVG(sal) > 2500
+
+
+
+051
+SELECT empid, empname, salary,
+CASE designation
+WHEN 'Administrator' THEN salary * 1.1
+WHEN 'Manager' THEN salary * 1.05
+WHEN 'Billing Staff' THEN salary * 1.2
+WHEN 'Security' THEN salary * 1.25
+ELSE salary * 1.02
+END AS increasedsalary
+FROM EmpDetails
+
+
+
+052
+SELECT empid, salary, CASE
+WHEN salary < 2500 THEN 'Class 3'
+WHEN salary BETWEEN 2500 AND 5000 THEN 'Class 2'
+ELSE 'Class 1'
+END AS salgrade
+FROM EmpDetails
+
+
+
+053
+SELECT itemcode, price AS "Old Price", ROUND(price * 0.745, 2) AS "New Price"
+FROM Item
+WHERE itemtype IN ('FMCG')
+
+
+
+054
+SELECT empid, empname, worksin
+FROM EmpDetails
+WHERE LOWER(designation) IN ('billing staff')
+
+
+
+055
+SELECT orderid, status, NVL(pymtmode, 'Payment yet not done') AS pymtmode
+FROM Orders
+
+
+
+056
+SELECT descr
+FROM Item
+WHERE LENGTH(descr) > 15
+
+
+
+057
+SELECT SUBSTR(roid, 2) AS numericroid
+FROM RetailOutlet
+
+
+
+058
+SELECT TO_CHAR(SYSDATE, 'Mon/DD/YYYY Day') AS currentdate
+FROM Dual
+
+
+
+059
+SELECT COUNT(orderid) AS totalorderscount, COUNT(pymtmode) AS paidorderscount
+FROM Orders
+
+
+
+060
+SELECT orderid, ABS(ROUND(MONTHS_BETWEEN(orderdate, pymtdate) * 30)) AS noofdays
+FROM Orders
+
+
+
+061
+SELECT COUNT(DISTINCT itemtype) AS noofitemtypes
+FROM Item
+
+
+
+062
+SELECT MAX(salary) AS maxsal, MIN(salary) AS minsal, SUM(salary) AS totalsal, AVG(salary) AS avgsal
+FROM EmpDetails
+
+
+
+063
+SELECT sname, AVG(quotedprice) AS "Average quoted price"
+FROM Quotation
+WHERE quotedprice > 1000 AND qstatus IN ('Closed')
+GROUP BY sname
+HAVING AVG(quotedprice) < 4500
+
+
+
+064
+SELECT COUNT(*) AS noofitems
+FROM Item
+
+
+
+065
+SELECT orderid, MONTHS_BETWEEN(orderdate, pymtdate) AS "No of Months"
+FROM Orders
+
+
+
+066
+SELECT SUM(quotedprice) AS totalprice
+FROM Quotation
+WHERE qstatus IN ('Accepted') AND TO_CHAR(qdate, 'MON') = 'JUN'
