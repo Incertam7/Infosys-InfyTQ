@@ -30,6 +30,22 @@ SELECT prodid, category, discount FROM Product WHERE category IN ('Sports', 'App
 
 
 029
+SELECT TO_CHAR(sldate, 'Month') AS month, COUNT(*) AS number_sale 
+FROM Sale 
+GROUP BY TO_CHAR(sldate, 'Month') 
+ORDER BY COUNT(*) DESC
 
+
+
+030
+SELECT prodid, SUM(quantity) AS qty_sold
+FROM SaleDetail
+WHERE quantity > 1
+GROUP BY prodid
+HAVING COUNT(*) > 1
+
+
+
+031
 
 
