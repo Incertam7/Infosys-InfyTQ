@@ -82,3 +82,37 @@ EMPTY	NA
 
 
 090
+Which of the following statement(s) is/are FALSE about order by clause?
+	Where clause can be used after order by clause
+	Order by only works on number column
+
+
+
+091
+Consider the table Employee( Ename, Salary, Deptno, Job) and the query,
+SELECT COUNT(*) FROM Employee ORDER BY Salary WHERE Deptno=10;
+	The above query will lead to error because ORDER BY clause should be used after WHERE clause.
+
+
+
+092
+Sample input for employee table and query output is provided below
+
+Input Table
+ENAME			SALARY
+Ethan McCarty	70000
+Jack Abraham	40000
+James Potter	50000
+
+Output Table
+ENAME			SALARY
+Jack Abraham	40000
+James Potter	50000
+Ethan McCarty	70000
+
+Which of the following query will produce the output above?
+	SELECT EName, Salary FROM Employee ORDER BY Salary, EName;
+
+
+
+093
