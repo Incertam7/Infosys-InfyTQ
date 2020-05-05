@@ -116,3 +116,47 @@ Which of the following query will produce the output above?
 
 
 093
+Consider the following “Quotation” table. How many rows would be displayed when the following query is executed?
+SELECT ItemCode, COUNT(*) FROM Quotation GROUP BY SupplierId, ItemCode;
+QuotationId	SupplierId	ItemCode	QuotedPrice
+Q1001		S1001		I1012		1500
+Q1002		S1002		I1012		1400
+Q1003		S1003		I1013		1450
+Q1004		S1001		I1012		600
+Q1005		S1004		I1013		625
+	4
+
+
+
+094
+Given the employee table as input, choose the query that displays department wise average salaries sorted in descending order.
+ID	ENAME			DEPT	SALARY
+1	James Potter	FSI		75000
+2	Ethan McCarty	ETA		90000
+3	Emily Rayner	ETA		25000
+4	Jack Abraham	ETA		30000
+	SELECT AVG(Salary) AvgSal, Dept FROM Employee GROUP BY Dept ORDER BY AvgSal DESC
+
+
+
+095
+Given the Employee table as input, which of the following query displays departments that have more than 1 employees?
+ID	ENAME			DEPT
+1	James Potter	FSI
+2	Ethan McCarty	ETA
+3	Emily Rayner	ETA
+	SELECT Dept, COUNT(*) FROM Employee GROUP BY Dept HAVING COUNT(*) > 1
+
+
+
+096
+Which statement shows the department ID, minimum salary, and maximum salary paid in that department, only if the minimum salary is less than 5000 and maximum salary is more than 15000?
+	SELECT DeptId, MIN (Salary), MAX (Salary)
+	FROM Employee
+	GROUP BY DeptId
+	HAVING MIN(Salary) < 5000
+	AND MAX (Salary) > 15000;
+
+
+
+097
