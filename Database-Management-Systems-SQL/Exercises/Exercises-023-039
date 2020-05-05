@@ -47,5 +47,61 @@ HAVING COUNT(*) > 1
 
 
 031
+SELECT prodid, pdesc, price AS "Old_Price", ROUND(price * 0.775, 2) AS "New_Price"
+FROM Product
+WHERE category IN 'Sports'
 
 
+
+032
+SELECT saleid, ABS(ROUND(MONTHS_BETWEEN(sldate, SYSDATE), 1)) AS month_aged
+FROM Sale
+
+(replace SYSDATE with 04-may-20, because the expected output isn't updated to the current date)
+
+
+
+033
+SELECT ROUND(AVG(price), 2) AS "Avg", MIN(price) AS "Min", MAX(price) AS "Max", COUNT(*) AS "Total"
+FROM Product
+
+
+
+034
+SELECT CONCAT(sname, CONCAT(' is from ', location)) AS result
+FROM SalesMan
+
+
+
+035
+SELECT TO_CHAR(TO_DATE('Jan/10/2015', 'MON/DD/YYYY'), 'Month') AS month, TO_NUMBER('2,50,000', '9,99,999') AS amount
+FROM Dual
+
+
+
+036
+SELECT prodid, pdesc, price
+FROM Product
+ORDER BY price DESC, prodid DESC
+
+
+
+037
+SELECT prodid, pdesc, price
+FROM Product
+ORDER BY pdesc
+
+
+
+038
+SELECT location, COUNT(*) AS number_sman
+FROM Salesman
+GROUP BY location
+
+
+
+039
+SELECT category
+FROM Product
+GROUP BY category
+HAVING count(*) > 1
