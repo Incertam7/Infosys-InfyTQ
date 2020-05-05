@@ -1,0 +1,84 @@
+081
+Which of the following statement is FALSE about functions?
+	Single row function always works on single column
+	Multiple row functions returns multiple row
+
+
+
+082
+Customer table consists of a column Balance. The table contains a single row with value 20000.56. What will be the output of the query below?
+SELECT ROUND(Balance) "ROUND", ROUND(Balance,1) "ROUND1", FLOOR(Balance) "FLOOR" FROM Customer;
+	ROUND	ROUND1	FLOOR
+	20001	20000.6	20000
+
+
+
+083
+Consider the following record of the customer table:
+LASTNAME
+Desouza
+What will be the output of the following query?
+SELECT LENGTH(SUBSTR(LASTNAME, 3,7)) FROM CUSTOMER
+	5
+
+
+
+084
+Consider the following record of the customer table:
+
+ACCDT
+8-JAN-13
+
+Which of the following query displays the data in the following format:
+
+DAY	MON
+08	01
+	
+	SELECT TO_CHAR(Accdt,'dd')"DAY", TO_CHAR(Accdt,'mm')"MON" FROM Customer
+
+
+
+085
+Which of the following aggregate functions can be applied on both number and character typed columns.
+	MIN
+	MAX
+	COUNT
+
+
+
+086
+Table T exists with single column A having 4 rows with values – 100, 200, NULL, 300. What is the output of the following query?
+SELECT MAX(A) FROM t WHERE a>1000;
+	NULL
+
+
+
+087
+Which of the following date function can be used to get the timestamp from database?
+	SYSTIMESTAMP
+
+
+
+088
+What will be the output of the following query?
+SELECT ABS(MONTHS_BETWEEN(ADD_MONTHS('09-FEB-2014',3),'09-Mar-2015'))"MONTHS" FROM DUAL
+	10
+
+
+
+089
+Consider the following record of customer table where NAME is of type VARCHAR2 and BALANCE is of type NUMBER. Which of the following query will give you the Desired output?
+
+Current Data
+NAME	BALANCE
+NULL	NULL
+
+Desired Output
+NAME	BALANCE
+EMPTY	NA
+
+	SELECT NVL(Name,'EMPTY') "NAME", NVL(TO_CHAR(Balance),'NA') "BALANCE" FROM Customer;
+
+
+
+090
