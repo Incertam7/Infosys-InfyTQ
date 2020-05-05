@@ -1,0 +1,25 @@
+023
+SELECT prodid, pdesc, category FROM Product WHERE LOWER(category) = 'electronics'
+
+
+
+024
+SELECT prodid, SUBSTR(pdesc, 1, 5) AS "PDESC_FIVE", category FROM Product
+
+
+
+025
+SELECT COUNT(saleid) AS "SALE_COUNT" FROM Sale WHERE MONTHS_BETWEEN(SYSDATE, sldate) <= 40
+
+(replace 40 with another number such as 60 as the data in the database is old and the test does not account for the current SYSDATE)
+
+
+
+026
+SELECT NVL(pdesc, 'No Description') AS PDESC, discount FROM Product
+
+(the table shown doesn't seem to exist in the database, WTF)
+
+
+
+027
