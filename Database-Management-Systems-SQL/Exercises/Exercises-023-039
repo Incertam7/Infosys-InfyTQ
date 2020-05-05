@@ -18,8 +18,20 @@ SELECT COUNT(saleid) AS "SALE_COUNT" FROM Sale WHERE MONTHS_BETWEEN(SYSDATE, sld
 026
 SELECT NVL(pdesc, 'No Description') AS PDESC, discount FROM Product
 
-(the table shown doesn't seem to exist in the database, WTF)
-
 
 
 027
+SELECT prodid, category, price, discount FROM Product ORDER BY category DESC, price
+
+(the expected output is empty... WTF)
+
+
+
+028
+SELECT prodid, category, discount FROM Product WHERE category IN ('Sports', 'Apparel') ORDER BY category, discount
+
+
+029
+
+
+
