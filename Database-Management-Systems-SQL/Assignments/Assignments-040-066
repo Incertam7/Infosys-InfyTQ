@@ -1,0 +1,41 @@
+040
+SELECT DISTINCT itemtype, CASE
+	WHEN PRICE BETWEEN 0 AND 499 THEN 'Cheap'
+	WHEN PRICE BETWEEN 500 AND 1999 THEN 'Affordable'
+	WHEN PRICE BETWEEN 2000 AND 4999 THEN 'Expensive'
+	ELSE 'Very Expensive'
+	END AS Classification
+FROM Item
+ORDER BY itemtype, classification
+
+
+
+041
+SELECT TO_CHAR(qdate, 'Month') AS month, COUNT(*) AS quotationcount
+FROM Quotation
+GROUP BY TO_CHAR(qdate, 'Month')
+
+
+
+042
+SELECT orderid, ROUND(MONTHS_BETWEEN(pymtdate, orderdate), 2) AS "No of Months"
+FROM Orders
+WHERE MONTHS_BETWEEN(pymtdate, orderdate) > 0.1 AND NOT pymtdate IS NULL
+
+
+
+043
+SELECT empid, salary AS "Current Salary", ROUND(salary * 1.2, 2) AS "New Salary", salary * 0.2 AS "Incremented Amount"
+FROM EmpDetails
+WHERE designation IN ('Manager')
+
+
+
+044
+SELECT itemcode
+FROM Item
+WHERE ABS(qtyonhand - reorderlevel) > 50
+
+
+
+045
