@@ -45,4 +45,78 @@ SELECT roid, location FROM retailoutlet WHERE managerid IS NULL
 
 024
 SELECT orderid, quotationid, status FROM orders WHERE orderdate BETWEEN '1-DEC-2014' AND '1-JAN-2015' 
-CHECK AGAIN!!!!!!
+
+
+
+025
+SELECT itemcode, descr, price FROM Item WHERE category = 'B' AND descr LIKE '%Shirt%' OR descr LIKE '%Skirt%'
+
+
+
+026
+SELECT DISTINCT designation, salary FROM EmpDetails
+
+
+
+027
+SELECT itemcode, descr, price FROM Item
+
+
+
+028
+SELECT quotationid, sname FROM Quotation WHERE qstatus IN ('Accepted', 'Rejected')
+
+
+
+029
+SELECT itemcode, descr, price FROM Item WHERE descr LIKE '_r%'
+
+
+
+030
+SELECT DISTINCT itemtype FROM Item
+
+
+
+031
+SELECT orderid, quotationid, status, pymtdate FROM Orders WHERE status = 'Ordered'
+
+
+
+032
+SELECT DISTINCT itemtype, category FROM Item
+
+
+
+033
+SELECT empid, salary AS "Current Salary", salary * 1.1 AS "New Salary", salary * 0.1 AS "Incremented Amount" FROM EmpDetails
+
+
+
+034
+INSERT INTO City VALUES('Mysore')
+
+
+
+035
+INSERT INTO Address VALUES(350, 'Electronics City', 'Mysore', 570018, 'Karnataka')
+
+
+
+036
+INSERT INTO Article VALUES('A1002', 'Keyboard', 1000, 10, 'B')
+
+
+
+037
+SELECT quotationid, qdate, quotedprice FROM Quotation WHERE quotedprice BETWEEN 1401 AND 2149
+
+
+
+038
+SELECT itemtype, descr, price FROM Item WHERE price > 4000
+
+
+
+039
+SELECT designation, salary FROM EmpDetails WHERE designation IN ('Manager', 'Billing Staff') AND salary BETWEEN 2500 AND 5000
