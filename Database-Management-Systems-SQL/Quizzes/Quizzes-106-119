@@ -1,0 +1,20 @@
+106
+Which of the following command displays distinct rows?
+	UNION
+
+
+
+107
+Which of the following statement(s) is/are FALSE about UNION?
+	Column Names in all queries in a UNION must match position wise
+	UNION can be used with UPDATE statement
+
+
+
+108
+Which of the following statement is TRUE about UNION?
+	UNION and UNION ALL give same result if the participating queries are mutually exclusive
+
+
+
+109
