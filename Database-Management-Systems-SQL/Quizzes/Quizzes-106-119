@@ -18,3 +18,123 @@ Which of the following statement is TRUE about UNION?
 
 
 109
+Given the Employee table as input, choose the query that produces the output below?
+ID	ENAME			MANAGER
+1	Ethan McCarthy	NULL
+2	Emily Rayner	1
+3	Jack Abraham	1
+
+Reporting
+Jack Abraham Reports to Ethan McCarthy
+Emily Rayner Reports to Ethan McCarthy
+
+	SELECT E1.Ename || ' Reports to ' || E2.Ename "Reporting" 
+	FROM Employee E1 INNER JOIN Employee E2 ON E1.Manager = E2.Id;
+
+
+
+110
+Relation R1 has 10 tuples and 5 attributes. Relation R2 has 0 tuples and 7 attributes. When a 'CROSS JOIN' is achieved between R1 and R2, how many tuples would the resultant set have?
+	0
+
+
+
+111
+Given the Employee and Computer tables as input, choose the query which produces the result table as shown below
+
+Employee Table
+ID	ENAME			COMPID
+1	James Potter	1001
+2	Ethan McCarthy	NULL
+3	Emily Rayner	NULL
+
+Computer Table
+COMPID	MODEL
+1001	Vostro
+1002	Precision
+
+Result Table
+ID	ENAME			COMPID	MODEL
+1	James Potter	1001	Vostro
+
+	SELECT E.Id, E.Ename, C.CompId, C.Model FROM Employee E LEFT OUTER JOIN Computer C ON E.CompId = C.CompId WHERE C.CompId IS NOT NULL;
+	SELECT E.Id, E.EName, C.CompID, C.Model FROM Employee E INNER JOIN Computer C ON E.CompId = C.CompId
+
+
+
+112
+Consider the following tables. What would be the output of the following query?
+
+SELECT S.SupplierId, S.SName, Q.QuotId, QtyOrdered
+FROM Orders O INNER JOIN Quotation Q ON O.QuotId = Q.QuotId
+RIGHT OUTER JOIN Supplier S ON Q.SupplierId = S.SupplierId
+
+Quotation Table
+QuotId	SupplierId
+Q1001	S1001
+Q1002	S1002
+Q1003	S1003
+Q1004	S1001
+Q1005	S1004
+
+Supplier Table
+SupplierId	SName
+S1001		Giant Store
+S1002		EBATs
+S1003		Shop Zilla
+S1004		VV Electronics
+S1005		Victor Electronics
+
+Orders Table
+OrderId	QuotId	QtyOrdered
+O1001	Q1002	100
+O1002	Q1004	150
+O1003	Q1005	50		
+
+	S1002	EBATs				Q1002	100
+	S1001	Giant Store			Q1004	150
+	S1004	VV Electronics		Q1005	50
+	S1003	Shop Zilla 		
+	S1005	Victor Electronics
+
+
+
+113
+Consider the following tables. What would be the output of the following query?
+
+SELECT S.SupplierId, S.SName, Q.QuotId, QtyOrdered 
+FROM Supplier S LEFT OUTER JOIN Quotation Q ON Q.SupplierId = S.SupplierId 
+LEFT OUTER JOIN Orders O ON O.QuotId = Q.QuotId 
+
+Quotation Table
+QuotId	SupplierId
+Q1001	S1001
+Q1002	S1002
+Q1003	S1003
+Q1004	S1001
+Q1005	S1004
+
+Supplier Table
+SupplierId	SName
+S1001		Giant Store
+S1002		EBATs
+S1003		Shop Zilla
+S1004		VV Electronics
+S1005		Victor Electronics
+
+Orders Table
+OrderId	QuotId	QtyOrdered
+O1001	Q1002	100
+O1002	Q1004	150
+O1003	Q1005	50
+
+	S1002	EBATs				Q1002	100
+	S1001	Giant Store			Q1004	150
+	S1004	VV Electronics		Q1005	50
+	S1003	Shop Zilla			Q1003 	
+	S1001	Giant Store			Q1001 	
+	S1005	Victor Electronics
+
+
+
+114
