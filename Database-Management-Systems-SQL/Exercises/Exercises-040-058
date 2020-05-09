@@ -1,0 +1,53 @@
+040
+SELECT * FROM Salesman WHERE sname LIKE '%e%' AND location LIKE '%o%'
+UNION ALL
+SELECT * FROM Salesman WHERE sname LIKE '%a%' AND location LIKE '%a%'
+
+
+
+041
+SELECT * FROM Product WHERE discount < 10
+UNION ALL
+SELECT * FROM Product WHERE category = 'Sports'
+
+
+
+042
+SELECT * FROM Product WHERE discount < 10
+UNION
+SELECT * FROM Product WHERE category = 'Sports'
+
+
+
+043
+SELECT 'S' AS type, sid AS id, sname AS details FROM Salesman
+UNION ALL
+SELECT 'P' AS type, prodid AS id, category AS details FROM Product
+
+
+
+044
+SELECT E.id, E.ename, E.dept, E.compid, C.make
+FROM Employee E INNER JOIN Computer C
+ON E.compid = C.compid
+
+
+
+045
+SELECT E.id, E.ename, E.compid, C.make
+FROM Employee E INNER JOIN Computer C
+ON E.compid = C.compid
+WHERE model IN ('Precision', 'Edge')
+
+
+
+046
+SELECT E.dept, COUNT(E.id) AS "NUMBER OF COMPUTERS"
+FROM Employee E INNER JOIN Computer C
+ON E.compid = C.compid
+WHERE C.make = 'Dell'
+GROUP BY E.dept
+
+
+
+047
