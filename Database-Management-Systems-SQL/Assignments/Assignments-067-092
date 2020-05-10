@@ -28,3 +28,154 @@ FROM Emp E LEFT OUTER JOIN EmpVehicle EV ON E.empno = EV.empno
 
 
 071
+SELECT I.itemcode, I.descr, Q.sname
+FROM Item I INNER JOIN Quotation Q ON I.itemcode = Q.itemcode
+
+
+
+072
+SELECT C.custid AS "Customer Id", C.custname AS "Customer Name"
+FROM Customer C INNER JOIN EmpDetails E ON C.custname = E.empname AND C.emailid = E.emailid
+
+
+
+073
+SELECT I.itemcode, I.descr, I.category, Q.quotedprice
+FROM Item I INNER JOIN Quotation Q ON I.itemcode = Q.itemcode
+WHERE Q.qstatus = 'Accepted'
+
+
+
+074
+SELECT R.roid, I.descr, I.itemtype, R.unitprice
+FROM RetailStock R INNER JOIN Item I ON R.itemcode = I.itemcode
+WHERE R.unitprice > 1500
+
+
+
+075
+SELECT I.itemcode, Q.sname, SUM(O.qtyordered) AS totalquantity
+FROM Item I INNER JOIN Quotation Q ON I.itemcode = Q.itemcode
+	INNER JOIN Orders O ON Q.quotationid = O.quotationid
+GROUP BY I.itemcode, Q.sname
+HAVING SUM(O.qtyordered) > 100
+
+
+
+076
+SELECT I.itemcode, I.descr
+FROM Item I INNER JOIN Quotation Q ON I.itemcode = Q.itemcode AND I.price = Q.quotedprice
+GROUP BY I.itemcode, I.descr
+HAVING COUNT(I.itemcode) > 1
+
+
+
+077
+SELECT DISTINCT Q.sname, Q.quotationid
+FROM Quotation Q INNER JOIN Orders O ON Q.quotationid = O.quotationid
+WHERE O.delivereddate - O.orderdate <= 5
+
+
+
+078
+SELECT NVL(E.empname, 'No Manager') AS "EMPNAME", I.category AS "CATEGORY", SUM(R1.qtyavailable) AS "TOTALQUANTITY"
+FROM Item I INNER JOIN RetailStock R1 ON I.itemcode = R1.itemcode
+	RIGHT OUTER JOIN RetailOutlet R2 ON R1.roid = R2.roid
+		LEFT OUTER JOIN EmpDetails E ON R2.managerid = E.empid
+GROUP BY E.empname, I.category
+
+
+
+079
+SELECT R.location AS "LOCATION", C.custtype AS "CUSTTYPE", SUM(P.quantity) AS "TOTALQUANTITY"
+FROM RetailOutlet R INNER JOIN PurchaseBill P ON R.roid = P.roid
+	INNER JOIN Customer C ON P.custid = C.custid AND c.gender = 'M'
+		INNER JOIN Item I ON I.itemcode = P.itemcode AND I.itemtype IN ('Apparels', 'Computer')
+GROUP BY R.location, C.custtype
+
+
+
+080
+SELECT I.itemcode AS "ITEMCODE", I.descr AS "DESCR", NVL(P.billamount, 0) AS "BILLAMOUNT", NVL(C.custid, 0) AS "CUSTID"
+FROM Item I LEFT OUTER JOIN PurchaseBill P ON I.itemcode = P.itemcode
+	LEFT OUTER JOIN Customer C ON P.custid = C.custid
+WHERE I.itemtype = 'FMCG'
+
+
+
+081
+SELECT I.itemcode AS "ITEMCODE", I.descr AS "DESCR", NVL(TO_CHAR(R.qtyavailable), 'N.A.') AS "QTYAVAILABLE"
+FROM Item I LEFT OUTER JOIN RetailStock R ON I.itemcode = R.itemcode AND R.roid = 'R1001'
+
+
+
+082
+SELECT E.empid, E.empname, R.roid, R.location
+FROM EmpDetails E RIGHT OUTER JOIN RetailOutlet R ON E.worksin = R.roid
+
+
+
+083
+SELECT E1.empname, E1.designation, E1.emailid
+FROM EmpDetails E1 INNER JOIN EmpDetails E2 ON E1.worksin = E2.worksin AND E1.empname <> E2.empname AND E2.empname = 'George'
+
+
+
+084
+SELECT DISTINCT C1.custid, C1.custname
+FROM Customer C1 INNER JOIN Customer C2 ON C1.custid <> C2.custid
+WHERE C1.address = C2.address
+
+
+
+085
+SELECT C.custname, P.billamount
+FROM Customer C INNER JOIN PurchaseBill P ON C.custid = P.custid
+WHERE P.billamount > 5000
+
+
+
+086
+SELECT R1.roid, COUNT(R2.itemcode) AS "Number of items"
+FROM RetailOutlet R1 INNER JOIN RetailStock R2 ON R1.roid = R2.roid
+GROUP BY R1.roid
+
+
+
+087
+SELECT I.itemcode, I.descr, RO.location, RS.qtyavailable
+FROM Item I INNER JOIN RetailStock RS ON I.itemcode = RS.itemcode
+	INNER JOIN RetailOutlet RO ON RS.roid = RO.roid
+WHERE I.itemtype = 'Apparels'
+
+
+
+088
+SELECT I.itemcode, I.descr, NVL(TO_CHAR(Q.quotationid), 'No quotation received') AS quotationid
+FROM Item I LEFT OUTER JOIN Quotation Q ON I.itemcode = Q.itemcode
+
+
+
+089
+SELECT I.itemcode, I.descr, R.roid, R.qtyavailable
+FROM Item I INNER JOIN RetailStock R ON I.itemcode = R.itemcode
+
+
+
+090
+SELECT I.descr, I.itemtype, P.billamount
+FROM Item I INNER JOIN PurchaseBill P ON I.itemcode = P.itemcode
+WHERE P.roid = 'R1001'
+
+
+
+091
+SELECT C1.custid, C1.custname, C1.custtype
+FROM Customer C1 INNER JOIN Customer C2 ON C1.custtype = C2.custtype AND C1.custid <> C2.custid AND C2.custid = 2004
+
+
+
+092
+SELECT I.itemtype, I.descr, NVL(TO_CHAR(quotationid), 'No quotation received') AS "Available Quotation number"
+FROM Item I LEFT OUTER JOIN Quotation Q ON I.itemcode = Q.itemcode
+WHERE I.itemtype IN ('Computer', 'FMCG')
