@@ -77,3 +77,20 @@ ON S1.sid = S2.sid
 
 
 050
+SELECT S1.sid, S1.sname, SUM(P.price * S3.quantity) AS tamount, SUM((P.price * S3.quantity) * P.discount * 0.01) AS tdiscount
+FROM Salesman S1 INNER JOIN Sale S2 ON S1.sid = S2.sid
+	INNER JOIN SaleDetail S3 ON S2.saleid = S3.saleid
+		INNER JOIN Product P ON S3.prodid = P.prodid
+GROUP BY S1.sid, S1.sname
+ORDER BY SUM(P.price * S3.quantity) DESC, SUM((P.price * S3.quantity) * P.discount * 0.01) DESC
+
+
+
+051
+SELECT S1.saleid, S1.prodid, S3.sid, S3.sname
+FROM SaleDetail S1 INNER JOIN Sale S2 ON S1.saleid = S2.saleid
+	INNER JOIN Salesman S3 ON S2.sid = S3.sid
+
+
+
+052
