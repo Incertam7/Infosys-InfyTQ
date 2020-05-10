@@ -1,0 +1,30 @@
+ 067
+SELECT E.ename, E.sal, D.dname
+FROM Emp E INNER JOIN Dept D ON E.deptno = D.deptno
+WHERE E.sal > 2000
+
+
+
+068
+SELECT E.ename, D.dname
+FROM Emp E INNER JOIN Dept D ON E.deptno = D.deptno
+WHERE E.job = 'MANAGER'
+
+
+
+069
+SELECT D.dname
+FROM Emp E INNER JOIN Dept D ON E.deptno = D.deptno AND E.sal > 1500
+GROUP BY D.dname
+HAVING COUNT(E.empno) > 1
+
+
+
+070
+SELECT E.ename, V.vehiclename
+FROM Emp E LEFT OUTER JOIN EmpVehicle EV ON E.empno = EV.empno
+	LEFT OUTER JOIN Vehicle V ON V.vehicleid = EV.vehicleid
+
+
+
+071
