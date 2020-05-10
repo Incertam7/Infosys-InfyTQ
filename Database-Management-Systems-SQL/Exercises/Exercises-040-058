@@ -94,3 +94,22 @@ FROM SaleDetail S1 INNER JOIN Sale S2 ON S1.saleid = S2.saleid
 
 
 052
+SELECT S1.sid, S1.sname, NVL(SUM(P.price * S3.quantity), 0) AS tamount, NVL(SUM((P.price * S3.quantity) * P.discount * 0.01), 0) AS tdiscount
+FROM Salesman S1 LEFT OUTER JOIN Sale S2 ON S1.sid = S2.sid
+	LEFT OUTER JOIN SaleDetail S3 ON S2.saleid = S3.saleid
+		LEFT OUTER JOIN Product P ON S3.prodid = P.prodid
+GROUP BY S1.sid, S1.sname
+ORDER BY S1.sname
+
+
+
+053
+SELECT S1.location, P.category, SUM(S3.quantity) AS "Total Quantity"
+FROM Salesman S1 INNER JOIN Sale S2 ON S1.sid = S2.sid
+	INNER JOIN SaleDetail S3 ON S2.saleid = S3.saleid
+		INNER JOIN Product P ON S3.prodid = P.prodid
+GROUP BY S1.location, P.category
+
+
+
+054
