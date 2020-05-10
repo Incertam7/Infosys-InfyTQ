@@ -138,3 +138,38 @@ O1003	Q1005	50
 
 
 114
+Which join is equivalent to Cartesian Product?
+	CROSS JOIN
+
+
+
+115
+Identify the type of join query used in the below code?
+SELECT E.Id, E.EName, C.CompId, C.Model 
+FROM Employee E, Computer C WHERE E.CompId = C.CompId
+	INNER JOIN
+
+
+
+116
+Which of the following conditions has to be satisfied for INNER JOIN to work?
+	Columns used for joining can have same or different name
+
+
+
+117
+Which of the following statements are true?
+	RIGHT OUTER JOIN is equivalent to LEFT OUTER JOIN if order of tables are reversed
+	INNER JOIN only retrieves those rows from Cartesian Product that satisfy the JOIN condition
+
+
+
+118
+Which of the following statement is TRUE about FULL OUTER JOIN created on two tables Table1 and Table2?
+	Retrieves both matched and unmatched rows of Table1 and Table2
+
+
+
+119
+Which join is to be used between two tables A and B when the resultant table needs rows from A and B that matches the condition and rows from A that does not match the condition.
+	Outer Join
