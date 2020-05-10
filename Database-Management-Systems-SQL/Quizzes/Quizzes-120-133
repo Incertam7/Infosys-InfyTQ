@@ -23,3 +23,33 @@ Independent sub query is the one where
 
 
 123
+Consider the below emp table with the data.
+EMPNO	ENAME	DEPTNO
+7369	SMITH	20
+7499	ALLEN	30
+7654	MARTIN	30
+7839	KING	10
+7900	ALLEN	30
+SELECT EName FROM Emp WHERE DeptNo = MAX(DeptNo);
+
+	Error
+
+
+
+124
+Consider the below emp table with the data.
+EMPNO	ENAME	DEPTNO
+7369	SMITH	20
+7499	ALLEN	30
+7839	KING	10
+7900	ALLEN	30
+
+What is the output of the following query?
+SELECT ename FROM emp WHERE ename = (SELECT MIN(ename) FROM emp);
+
+	ALLEN
+	ALLEN
+
+
+
+125
