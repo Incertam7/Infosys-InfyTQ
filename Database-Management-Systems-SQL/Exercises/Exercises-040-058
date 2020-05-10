@@ -51,3 +51,29 @@ GROUP BY E.dept
 
 
 047
+SELECT S1.saleid, S1.sldate
+FROM Sale S1
+INNER JOIN
+Salesman S2 ON S1.sid = S2.sid
+WHERE S2.location = 'London'
+
+
+
+048
+SELECT S1.sid, S1.sname, S1.location
+FROM Salesman S1
+INNER JOIN Salesman S2
+ON S1.location = S2.location 
+AND S1.sname <> S2.sname
+
+
+
+049
+SELECT S1.sname, S2.saleid
+FROM Salesman S1
+LEFT OUTER JOIN Sale S2
+ON S1.sid = S2.sid
+
+
+
+050
