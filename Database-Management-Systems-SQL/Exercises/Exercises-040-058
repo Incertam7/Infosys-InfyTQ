@@ -113,3 +113,32 @@ GROUP BY S1.location, P.category
 
 
 054
+SELECT  E.ename, E.dept, NVL(C.model, 'Not allocated') AS model
+FROM Employee E LEFT OUTER JOIN Computer C ON E.compid = C.compid
+
+
+
+055
+SELECT E.id, E.ename, E.dept, C.model
+FROM Employee E FULL OUTER JOIN Computer C ON E.compid = C.compid
+
+
+
+056
+SELECT E.id, E.ename, M.id AS mgrid, M.ename AS mgrname, C1.model AS e_model, C2.model AS m_model
+FROM Employee E INNER JOIN Employee M ON E.manager = M.id
+	INNER JOIN Computer C1 ON E.compid = C1.compid
+		INNER JOIN Computer C2 ON M.compid = C2.compid
+
+
+
+057
+SELECT S1.sid, S1.sname
+FROM Salesman S1 LEFT OUTER JOIN Sale S2 ON S1.sid = S2.sid
+WHERE S2.saleid IS NULL
+
+
+
+058
+SELECT P1.prodid, P1.category, P1.price
+FROM Product P1 INNER JOIN Product P2 ON P1.price = P2.price AND P1.prodid <> P2.prodid
