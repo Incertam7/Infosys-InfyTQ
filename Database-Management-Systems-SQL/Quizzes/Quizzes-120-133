@@ -1,0 +1,25 @@
+120
+What is TRUE regarding Independent Subquery?
+i) Equality operator can only be used if subquery returns only one row.
+ii) IN operator can be used if subquery returns multiple rows.
+iii) Equality operator can be used if subquery returns multiple rows.
+	BOTH i) and ii)
+
+
+
+121
+Where can subqueries be used? (Choose all that apply)
+	Field names in the SELECT statement
+	The FROM clause in the SELECT statement
+	The HAVING clause in the SELECT statement
+	The WHERE clause in SELECT as well as all DML statements
+
+
+
+122
+Independent sub query is the one where
+	the inner query has no reference to the outer query
+
+
+
+123
