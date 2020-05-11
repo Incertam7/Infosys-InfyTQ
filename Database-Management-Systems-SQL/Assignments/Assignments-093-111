@@ -1,1 +1,51 @@
+093
+SELECT DISTINCT I.itemcode, I.itemtype, I.descr, I.category
+FROM Item I INNER JOIN PurchaseBill P ON I.itemcode = P.itemcode
 
+
+
+094
+SELECT itemcode, itemtype, descr, category
+FROM Item
+WHERE price IN
+	(SELECT MIN(quotedprice)
+	FROM Quotation
+	WHERE qstatus = 'Rejected')
+
+
+
+095
+SELECT I.itemcode, I.descr
+FROM Item I INNER JOIN Quotation Q
+ON I.itemcode = Q.itemcode AND Q.qstatus IN ('Rejected','Closed') AND Q.quotedprice IN
+	(SELECT MAX(Qtemp.quotedprice)
+	FROM quotation Qtemp 
+	WHERE Qtemp.qstatus IN ('Rejected','Closed'))
+
+
+
+096
+SELECT I.itemcode, I.descr, I.price
+FROM Item I
+WHERE price IN
+	(SELECT MAX(price)
+	FROM Item
+	WHERE price <
+		(SELECT MAX(price) 
+		FROM Item))
+
+
+
+097
+to be done in eclipse apparently
+can't submit on infytq
+
+SELECT empid, empname, designation
+FROM Empdetails
+WHERE empid EXISTS 
+	(SELECT managerid
+	FROM RetailOutlet)
+
+
+
+098
