@@ -53,3 +53,29 @@ SELECT ename FROM emp WHERE ename = (SELECT MIN(ename) FROM emp);
 
 
 125
+SELECT SM.SID, SNAME FROM SALESMAN SM
+INNER JOIN SALE S ON S.SID = SM.SID
+WHERE LOCATION = 'London'
+GROUP BY SM.SID, SNAME
+HAVING SUM(AMOUNT) <
+(SELECT AVG(SUM(AMOUNT)) FROM SALE  GROUP BY SID );
+Identify the statement which describes about what the query is trying to achieve?
+
+	Calculates the average amount of sales done based on each salesman's total sale amount. Displays SID and SNAME of salesmen whose total amount of sale is lesser than the average amount of sale calculated and who belongs to city 'London'.
+
+
+
+126
+SELECT SM.SID, SNAME, LOCATION FROM SALESMAN SM
+INNER JOIN SALE S ON S.SID = SM.SID GROUP BY SM.SID, SNAME, LOCATION
+HAVING Sum(AMOUNT)>
+(SELECT MIN(SUM(AMOUNT)) FROM SALE SI INNER JOIN SALESMAN SMI
+ON SI.SID = SMI.SID GROUP BY SI.SID) + 2000;
+When the above query is executed , which of the following row will appear as one of the row along with other rows?
+
+	SID	SNAME	LOCATION
+	5	Kevin	London
+
+
+
+127
