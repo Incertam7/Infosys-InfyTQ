@@ -49,3 +49,136 @@ WHERE empid EXISTS
 
 
 098
+SELECT ename, job
+FROM Emp
+WHERE empno IN (SELECT empno FROM EmpVehicle)
+
+
+
+099
+SELECT ename
+FROM Emp
+WHERE Sal IN (SELECT MAX(Sal) FROM Emp)
+
+
+
+100
+SELECT empno, ename 
+FROM Emp 
+WHERE empno IN 
+	(SELECT empno, vehicleid 
+	FROM EmpVehicle 
+	WHERE vehicleid IN
+	(SELECT vehicleid
+	FROM EmpVehicle
+	GROUP BY vehicleid
+	HAVING COUNT(vehicleid) =
+	(SELECT MAX(COUNT(vehicleid))
+	FROM EmpVehicle
+	GROUP BY vehicleid)))
+	
+	//// this is wrong but the solution given by omkar and the other one is also wrong WTF /////
+
+
+
+101
+to be done in eclipse, do later
+
+
+
+102
+SELECT I.itemcode, I.descr, Q.qdate
+FROM Item I 
+INNER JOIN Quotation Q ON I.itemcode = Q.itemcode
+WHERE Q.quotedprice <
+	(SELECT MAX(quotedprice)
+	FROM Quotation Q2
+	WHERE Q2.qdate = Q.qdate AND Q.quotationid <> Q2.quotationid
+	GROUP BY Q2.qdate)
+
+
+
+103
+SELECT billid, itemcode
+FROM PurchaseBill P1
+WHERE billamount <=
+	(SELECT AVG(billamount)
+	FROM PurchaseBill P2
+	WHERE P1.roid = P2.roid)
+
+
+
+104
+SELECT DISTINCT Q.sname, I.itemcode, I.descr
+FROM Item I INNER JOIN Quotation Q ON I.itemcode = Q.itemcode
+WHERE Q.quotedprice <
+	(SELECT MAX(Q2.quotedprice)
+	FROM Quotation Q2
+	WHERE Q.sname <> Q2.sname AND Q.itemcode = Q2.itemcode)
+
+
+
+105
+SELECT E.empid, E.empname, E.designation, E.salary
+FROM EmpDetails E
+WHERE E.salary = 
+	(SELECT MAX(E2.salary)
+	FROM EmpDetails E2
+	WHERE E.designation = E2.designation)
+
+
+
+106
+SELECT C.custid, C.custname
+FROM Customer C 
+WHERE NOT EXISTS 
+	(SELECT PB.custid
+	FROM PurchaseBill PB
+	WHERE C.custid = PB.custid)
+
+
+
+107
+to be done in eclipse do later
+
+
+
+108
+SELECT C.custid, C.custname
+FROM Customer C
+WHERE EXISTS
+	(SELECT PB.custid
+	FROM PurchaseBill PB
+	WHERE PB.custid = C.custid)
+
+
+
+109
+SELECT E.empno, E.ename
+FROM Emp E
+WHERE E.sal >
+	(SELECT AVG(E2.sal)
+	FROM Emp E2
+	WHERE E.deptno = E2.deptno
+	GROUP BY E2.deptno)
+
+
+
+110
+DELETE FROM EmpVehicle EV
+WHERE EV.empno IN
+	(SELECT E.empno
+	FROM Emp E
+	WHERE E.sal =
+		(SELECT MAX(E2.sal)
+		FROM Emp E2
+		WHERE E2.deptno = E.deptno))
+
+
+
+111
+UPDATE Emp E
+SET sal =
+	(SELECT AVG(E2.sal)
+	FROM Emp E2
+	WHERE E2.deptno = E.deptno)
