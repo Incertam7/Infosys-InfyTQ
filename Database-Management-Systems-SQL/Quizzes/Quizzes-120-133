@@ -98,3 +98,37 @@ Both fire the statement ROLLBACK after the above statements. Choose the correct 
 
 
 128
+Which of the following statements are TRUE regarding subqueries? (Choose two)
+	A subquery can retrieve zero or more rows
+	A subquery can appear on either side of a comparison operator
+
+
+
+129
+Which of the following statement is TRUE regarding subqueries?
+	Outer query and inner query can get data from different tables
+
+
+
+130
+Which of the following statement(s) is/are TRUE?
+	An inner query can access all columns from table in outer query
+	An inner query is always enclosed in parenthesis
+
+
+
+131
+Which of the following statement is FALSE about transaction?
+	Once the data is committed it can be rolled back
+
+
+
+132
+Which of the following statements does not change the state of the database?
+	SELECT
+
+
+
+133
+Which ACID property specifies that once the transaction is committed, it's permanent even in case of power failures?
+	Durability
