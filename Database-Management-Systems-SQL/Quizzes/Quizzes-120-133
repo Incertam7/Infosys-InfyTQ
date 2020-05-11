@@ -79,3 +79,22 @@ When the above query is executed , which of the following row will appear as one
 
 
 127
+Two developers Jim and Hamilton are inserting rows into two identical tables named Trees that has a numeric TreeId column which is the primary key and a VARCHAR2(10) tree name column.
+
+Jim Writes:
+SET AUTOCOMMIT OFF;
+INSERT INTO Trees VALUES(1,'Oak');
+INSERT INTO Trees VALUES(1,'Pine');
+
+Hamilton writes:
+SET AUTOCOMMIT ON;
+INSERT INTO Trees VALUES(1,'Oak');
+INSERT INTO Trees VALUES(1,'Pine');
+
+Both fire the statement ROLLBACK after the above statements. Choose the correct statement that reflects the state of the two tables after the ROLLBACK.
+	
+	Jim's table will have 0 rows while Hamilton's table will have 1 rows
+
+
+
+128
