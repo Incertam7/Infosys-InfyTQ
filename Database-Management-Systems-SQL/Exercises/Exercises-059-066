@@ -1,1 +1,130 @@
+059
+SELECT saleid, sldate
+FROM Sale
+WHERE sldate = (SELECT MAX(sldate) FROM Sale)
 
+
+
+060
+SELECT sname
+FROM Salesman
+WHERE sid IN (SELECT sid FROM Sale GROUP BY sid HAVING COUNT(saleid) >= 2)
+
+
+
+061
+SELECT prodid, pdesc
+FROM Product
+WHERE prodid = 
+	(SELECT prodid FROM SaleDetail GROUP BY prodid HAVING SUM(quantity) = 
+	(SELECT MIN(SUM(quantity)) FROM SaleDetail GROUP BY prodid))
+
+
+/////////////////////////////////// what the fuck is this solution ///////////////////////////////////////////////////////
+
+					062
+					SELECT SD.saleid AS saleid, SD.prodid AS prodid, SD.quantity AS qty, SD.quantity * (P.price - P.discount/100) AS saleamt
+					FROM SaleDetail SD
+					INNER JOIN Product P ON P.prodid = SD.prodid
+					ORDER BY saleid
+
+						this gives us the sale amount of each product in each sale id, next we need to find the total sale amount of each saleid
+
+					SELECT saleid, SUM(saleamt) AS totalsale
+					FROM 
+						(SELECT SD.saleid AS saleid, SD.prodid AS prodid, SD.quantity AS qty, SD.quantity * (P.price - P.discount/100) AS saleamt
+						FROM SaleDetail SD
+						INNER JOIN Product P ON P.prodid = SD.prodid)
+					GROUP BY saleid
+					ORDER BY saleid
+
+						this gives us the total sale amount for each saleid
+
+					SELECT AVG(totalsale)
+					FROM (SELECT saleid, SUM(saleamt) AS totalsale
+					FROM 
+						(SELECT SD.saleid AS saleid, SD.prodid AS prodid, SD.quantity AS qty, SD.quantity * (P.price - P.discount/100) AS saleamt
+						FROM SaleDetail SD
+						INNER JOIN Product P ON P.prodid = SD.prodid)
+					GROUP BY saleid)
+
+						this gives us the average of the saleamt of all saleid
+
+					SELECT SM.sid AS sid, SM.sname AS sname, S.saleid AS saleid, SD.prodid AS prodid, SD.quantity AS qty, SD.quantity * (P.price - P.discount/100) AS saleamt
+					FROM Salesman SM
+					INNER JOIN Sale S ON SM.sid = S.sid
+					INNER JOIN SaleDetail SD ON SD.saleid = S.saleid
+					INNER JOIN Product P ON SD.prodid = P.prodid
+					ORDER BY SM.sid
+
+						this joins the salesman to their corresponding sales id and the products they sold, and the sale amount of each product
+						now we group the salesmen together and add up their individual sales
+
+					SELECT sid, sname, SUM(saleamt) AS totalsales
+					FROM
+						(SELECT SM.sid AS sid, SM.sname AS sname, S.saleid AS saleid, SD.prodid AS prodid, SD.quantity AS qty, SD.quantity * (P.price - P.discount/100) AS saleamt
+						FROM Salesman SM
+						INNER JOIN Sale S ON SM.sid = S.sid
+						INNER JOIN SaleDetail SD ON SD.saleid = S.saleid
+						INNER JOIN Product P ON SD.prodid = P.prodid)
+					GROUP BY sid, sname
+					ORDER BY sid
+
+						this has grouped each salesman to their individual sales amount, now we calculate the average of these saleamt and filter out salesman who have salesamt larger than this average
+
+					SELECT AVG(totalsales)
+					FROM (SELECT sid, sname, SUM(saleamt) AS totalsales
+					FROM (SELECT SM.sid AS sid, SM.sname AS sname, S.saleid AS saleid, SD.prodid AS prodid, SD.quantity AS qty, SD.quantity * (P.price - P.discount/100) AS saleamt
+					FROM Salesman SM
+					INNER JOIN Sale S ON SM.sid = S.sid
+					INNER JOIN SaleDetail SD ON SD.saleid = S.saleid
+					INNER JOIN Product P ON SD.prodid = P.prodid)
+					GROUP BY sid, sname)
+
+						this is the average value
+						now we display sid, sname and location of the salesman whose total sales is greater than this value
+
+
+					omkar's soln
+					SELECT sid, sname, location
+					FROM Salesman
+					WHERE sid IN 
+						(SELECT sid 
+						FROM
+							(SELECT SM.SID, SUM((P.price - P.discount/100 * P.price) * SD.quantity) AS totalsales
+							FROM Sale S, SaleDetail SD, Product P
+							WHERE S.saleid = SD.saleid AND SD.prodid = P.prodid
+							GROUP BY S.sid 
+							ORDER BY S.sid
+							)
+						WHERE totalsales >
+							(SELECT SUM((P.price - P.discount/100 * P.price) * SD.quantity) / SUM(SD.quantity)) AS totalsales
+							FROM Sale S, SaleDetails SD, Product P 
+							WHERE S.saleid = SD.saleid AND SD.prodid = P.prodid 
+							GROUP BY S.sid
+							)
+						)
+
+
+seetha's solution
+
+SELECT sid, sname, location
+FROM Salesman
+WHERE sid
+IN	(SELECT S.sid
+	FROM Sale S
+	INNER JOIN SaleDetail SD ON S.saleid = SD.saleid
+	INNER JOIN Product P ON SD.prodid = P.prodid
+	GROUP BY S.sid
+	HAVING SUM(SD.quantity * (P.price - P.discount/100)) > 
+		(SELECT AVG(SUM(SD.quantity * (P.price - P.discount/100)))
+		FROM SaleDetail SD
+		INNER JOIN Product P ON SD.prodid = P.prodid
+		GROUP BY SD.saleid))
+
+
+/////////////////////////////////// what the fuck is this solution ///////////////////////////////////////////////////////
+
+
+
+063
