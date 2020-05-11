@@ -128,3 +128,43 @@ IN	(SELECT S.sid
 
 
 063
+SELECT prodid, category, pdesc, price
+FROM Product P1
+WHERE price = (SELECT MAX(price) FROM Product P2 WHERE P1.category = P2.category)
+
+
+
+064
+SELECT sname
+FROM Salesman
+WHERE sid NOT IN (SELECT sid FROM Sale)
+
+
+
+065
+SELECT sname
+FROM Salesman
+WHERE sid IN (SELECT sid
+FROM Sale
+WHERE TO_CHAR(sldate, 'MM-YY') = '06-15'
+GROUP BY sid
+HAVING COUNT(sid) >= 1)
+
+
+
+066
+SELECT SM.sid, SM.sname, SM.location 
+FROM Salesman SM 
+WHERE SM.sid IN 
+(SELECT SM.sid 
+FROM Sale S INNER JOIN SaleDetail SD ON S.saleid = SD.saleid 
+INNER JOIN Salesman SM ON SM.sid = S.sid 
+INNER JOIN Product P ON SD.prodid = P.prodid 
+GROUP BY SM.sid, sm.sname, SM.location 
+HAVING SUM(SD.quantity * (P.price - P.discount/100)) > 
+(SELECT AVG(SUM(SD.quantity * (P.price - P.discount/100))) 
+FROM SaleDetail SD 
+INNER JOIN Product P ON SD.prodid = P.prodid 
+INNER JOIN Sale S ON SD.saleid = S.saleid
+INNER JOIN Salesman SM ON SM.sid = S.sid
+GROUP BY S.sid))
