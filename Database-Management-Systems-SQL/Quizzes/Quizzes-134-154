@@ -166,3 +166,9 @@ LightWorks is a consumer appliance company. They have their products stored in t
 Which of the following query will not use an index? Select more than one
 	SELECT ProductPrice from ConsumerProducts WHERE UPPER(ProductName) = 'ARIEL'
 	SELECT ProductPrice from ConsumerProducts WHERE ProductPrice BETWEEN 2000 AND 10000
+
+
+
+154
+Which of the following equivalent queries would be best from performance perspective? Assume that the Quotation tables contains an index on QStatus column.
+	SELECT QuotationId FROM Quotation WHERE QStatus IN ('Accepted', 'Closed');
