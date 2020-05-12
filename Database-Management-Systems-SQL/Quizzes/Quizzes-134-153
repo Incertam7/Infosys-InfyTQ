@@ -1,0 +1,168 @@
+134
+A functional dependency is a relationship between or among
+	Attributes
+
+
+
+135
+Which functional dependency types is/are present in following dependencies?
+StaffNo, BranchNo -> StaffName, BranchName, Position, DOB
+StaffNo -> StaffName, Position, DOB
+BranchNo -> BranchName
+	Full functional dependency
+	Partial functional dependency
+
+
+
+136
+Which functional dependency types is/are present in the following dependencies?
+Empno -> EName, Salary, Deptno, DName
+DeptNo -> DName
+EmpNo -> DName
+	Full functional dependency
+	Transitive functional dependency
+
+
+
+137
+Consider a relation R(A, B, C, D) with the following functional dependencies: A -> (B, C, D), (A, D) -> (B, C) and 
+(C, D) -> (A, B).
+Identify the candidate key(s).
+	{A}, {C, D}
+
+
+
+138
+A -> B also means that B -> A. State if the statement is True or False.
+	False
+
+
+
+139
+The database design prevents some data from being stored due to _______.
+	Insertion anomalies
+
+
+
+140
+A relation is in 2NF if:
+	All of the above.
+	
+	(All the values of non-key attributes are dependent fully on the candidate key.
+	Any non-key attribute that are dependent on only part of the candidate key should be moved to another relation where the partial key is the actual full key.
+	It must be already in the 1NF.)
+
+
+
+141
+If one attribute is determinant of second, which in turn is determinant of third, then the relation cannot be:
+	3NF
+
+
+
+142
+Consider the relation Sale(Date, Customer, Product, Vendor, VendorCity, SalesRep)
+{Date, Customer, Product} is the composite candidate key and the following functional dependencies are also given:
+Vendor -> VendorCity, Product -> Vendor
+What is the highest normal form of the sale relation?
+	1NF
+
+
+
+143
+Which of the following statement(s) is/are FALSE about OLAP? (Choose all that apply)
+	OLAP involves frequent insert, update and delete operations
+	OLAP requires complex joins to aggregate data from multiple tables
+
+
+
+144
+Match the following statements with the appropriate selection at the right side.
+
+Statement																				Choose Answer
+Identify correlation between salary structure and policies sold made by 				OLAP
+Insurance agents in an organization
+
+Update project details of an employee													OLTP
+
+Identify profit trends for different units of organization over years					OLAP
+
+Payment of telephone bill																OLTP
+
+
+
+145
+Which of the two statements are correct?
+	Index decreases performance of Insert, Update and Delete statements
+	Index increases performance of Select statements
+
+
+
+146
+Which of the following statements are correct?
+	Too many indexes slow down the database backup and recovery processes
+	Index for Primary Keys are automatically created
+
+
+
+147
+Which of the following statements are correct?
+	Indexes should be created on attributes used in the Where clause
+	A table can have only one clustered index and any number of non clustered indexes
+
+
+
+148
+Consider a Payment table with attributes PAY_ID (Primary Key), PAY_DT, PAY_AMT, BANK_ACCT, INIT_NAME and PAY_MODE. Except PAY_ID no columns are unique. The table has three indexes as follows:
+IDX1 – PAY_ID
+IDX2 – BANK_ACCT, PAY_AMT
+IDX3 – INIT_NAME, PAY_DT
+Which of the following queries will result in a table scan?
+	WHERE PAY_AMT = 100
+	WHERE UPPER(INIT_NAME) = 'JACK'
+
+
+
+149
+Consider a Payment table with attributes PAY_ID (Primary Key), PAY_DT, PAY_AMT, BANK_ACCT, INIT_NAME and PAY_MODE. Except PAY_ID no columns are unique. The table has three indexes as follows:
+IDX1 – PAY_ID
+IDX2 – BANK_ACCT, PAY_AMT
+IDX3 – INIT_NAME, PAY_DT
+Which of the following queries will result in UNIQUE INDEX SCAN?
+	WHERE PAY_ID = 19
+	WHERE PAY_ID = 25 and PAY_AMT = 100
+
+
+
+150
+Consider a Payment table with attributes PAY_ID (Primary Key), PAY_DT, PAY_AMT, BANK_ACCT, INIT_NAME and PAY_MODE. Except PAY_ID no columns are unique. The table has three indexes as follows:
+IDX1 – PAY_ID
+IDX2 – BANK_ACCT, PAY_AMT
+IDX3 – INIT_NAME, PAY_DT
+Which of the following queries will result in INDEX RANGE SCAN
+	WHERE BANK_ACCT = '1234567890' and PAY_AMT<>1000
+	WHERE INIT_NAME = 'Alice' and PAY_DT > '1-Jan-2015'
+
+
+
+151
+LightWorks is a consumer appliance company. They have their products stored in the table named ConsumerProducts that has the following attributes. ProductId, ProductName, ProductCategory, ProductPrice, ProductAvailability. ProductId is the primary key. Also for faster search and retrieval of data there are indexes IXPN on ProductName and IXPC on ProductCategory.
+
+John and Piper are discussing performance of the LightWorks database and are having an argument. John says "If I write a query SELECT DISTINCT ProductCategory FROM ConsumerProducts WHERE LENGTH(ProductName) > 5 then the index IXPN will not be used while IXPC will be used" Piper says "John you are wrong!, IXPN will be used and not IXPC for your scenario" Who is right and who is wrong?
+	
+	Both John and Piper are wrong
+
+
+
+152
+LightWorks is a consumer appliance company. They have their products stored in the table named ConsumerProducts that has the following attributes. ProductId, ProductName, ProductCategory, ProductPrice, ProductAvailability. ProductId is the primary key. Also for faster search and retrieval of data there are indexes IXPN on ProductName and IXPC on ProductCategory.
+Which of the following operations will result in the usage of index IXPC?
+	A search for products belonging to a particular ProductCategory
+
+
+
+153
+LightWorks is a consumer appliance company. They have their products stored in the table named ConsumerProducts that has the following attributes. ProductId, ProductName, ProductCategory, ProductPrice, ProductAvailability. ProductId is the primary key. Also for faster search and retrieval of data there are indexes IXPN on ProductName and IXPC on ProductCategory.
+Which of the following query will not use an index? Select more than one
+	SELECT ProductPrice from ConsumerProducts WHERE UPPER(ProductName) = 'ARIEL'
+	SELECT ProductPrice from ConsumerProducts WHERE ProductPrice BETWEEN 2000 AND 10000
