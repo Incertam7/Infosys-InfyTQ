@@ -1,0 +1,441 @@
+155
+Which of the following is not characterized as Big Data?
+	Bank Account details (fixed schema with attributes like Account Number, MICR, Account Type, Account Owner Name etc.)
+
+
+
+156
+Relational databases store structured data while Big Data stores data in any format. Most of real world data is of which type?
+	Big Data
+
+
+
+157
+Choose between SQL and NoSQL databases for the given scenarios.
+
+Question													Answer
+
+Can store data without specifying a schema					NoSQL
+Provides excellent scalability								NoSQL
+Reduces data redundancy										SQL
+Structured Financial data									SQL
+
+
+
+158
+Which of the following is not a feature of NoSQL databases?
+	These are Relational Databases
+
+
+
+159
+Choose between SQL and NoSQL databases for the given scenarios.
+
+Question							Answer
+Strong Consistency					SQL
+Eventual Consistency				NoSQL
+
+
+
+160
+By default, MongoDB supports
+	Partition Tolerance, Consistency
+
+
+
+161
+Which type of NoSQL databases follow ACID properties
+	Graph-based databases
+
+
+
+162
+Choose the most appropriate NoSQL database category for storing User Session information
+	Key-Value stores
+
+
+
+163
+Match the most appropriate SQL or the type of NoSQL databases for each of the given scenarios
+
+Question																	Answer
+On a shopping site, you are purchasing an item with only one stock 			
+left. No other customer should be able to access this particular item 
+and it should be locked for you (Strict ACID properties) 					Relational Databases
+
+Store data related to a social network with options such as relationship
+links, status updates, messaging and “likes”								Graph Databases
+
+You need to store contact details that can different from person to person 	
+such as some contacts having only one mobile number while others have two 
+or more. Also some may want to provide email-ids as their contact details 
+and so on 																	Document-Oriented Databases
+
+An e-commerce retailer keeping track of its customer’s preferences			Key-Value stores
+
+Data is continuously being logged into the database at very high rate 		Column Family stores
+
+
+
+164
+Match the following
+
+Question	Answer
+MongoDB		Document-Oriented Databases
+Cassandra	Column Family stores
+Neo4J		Graph Databases
+Oracle		RDBMS
+Riak		Key-Value stores
+
+
+
+165
+MongoDB is
+	document-oriented database
+
+
+
+166
+The query db.emp.update({$set:{ename: "ramesh"}, {_id: 102} ); is valid.
+	False
+
+
+
+167
+Consider the relation Game(txn_id, cust_id, game_id, start_date, start_time, txn_amount, txn_type) with following business rules:
+    The same customer may be playing the same game at the same time on different dates.
+    On the same date, there could be different customers playing the same game at the same time.
+    The same game could be played by different customers on different dates or the same date.
+    Transaction Type can be 'Regular' or 'Premium' depending upon the transaction amount. If amount is greater than 50 rupees that it is 'Premium' otherwise it is 'Regular'
+    txn_id represents unique instance of a game being played while game_id represents a particular game.
+Pick the most appropriate functional dependency for the above scenario
+	cust_id, start_date, start_time -> game_id
+
+
+
+168
+Consider the relation Game(txn_id, cust_id, game_id, start_date, start_time, txn_amount, txn_type) with following business rules:
+    The same customer may be playing the same game at the same time on different dates.
+    On the same date, there could be different customers playing the same game at the same time.
+    The same game could be played by different customers on different dates or the same date.
+    Transaction Type can be 'Regular' or 'Premium' depending upon the transaction amount. If amount is greater than 50 rupees that it is 'Premium' otherwise it is 'Regular'
+    txn_id represents unique instance of a game being played while game_id represents a particular game.
+Pick the most appropriate functional dependency for the above scenario
+	txn_id -> txn_amount -> txn_type
+
+
+
+169
+Consider the relation Game(txn_id, cust_id, game_id, start_date, start_time, txn_amount, txn_type) with following business rules:
+    The same customer may be playing the same game at the same time on different dates.
+    On the same date, there could be different customers playing the same game at the same time.
+    The same game could be played by different customers on different dates or the same date.
+    Transaction Type can be 'Regular' or 'Premium' depending upon the transaction amount. If amount is greater than 50 rupees that it is 'Premium' otherwise it is 'Regular'
+    txn_id represents unique instance of a game being played while game_id represents a particular game.
+Quiz 169: If the following functional dependency is added then
+txn_id, cust_id -> txn_amount
+
+	It is a case of partial functional dependency
+
+
+
+170
+Person Table
+Id	Name		DOB
+1	Jack Smith	01-JAN-2014
+2	Jane Brown	01-MAR-2015
+3	Jack Brown	10-JAN-2014
+4	Jeff Brown	10-JUN-2015
+Following queries are executed on Person table:
+    SELECT COUNT(*) FROM Person WHERE DOB LIKE '01%'
+    SELECT COUNT(*) FROM Person WHERE DOB LIKE '%14'
+    SELECT COUNT(*) FROM Person WHERE DOB LIKE '%Jan%'
+Which is the outcome of the queries above?
+
+	2 rows, 2 rows, 0 rows
+
+
+
+171
+Consider the Book table with Primary Key BookId and BookIssue table with a Composite Primary Key of Book Id and Issue Date. Book Id in BookIssue table is a Foreign Key on Book Id in Book Table. Which of the following queries will execute successfully.
+	UPDATE Book Set BookId = 6 WHERE Category = ‘Fiction’
+	DELETE FROM BookIssue WHERE Status = ‘Returned’
+	
+	/// from here on out, I will not be posting the whole question along with the table
+
+
+
+172
+How many rows will be returned by the query below?
+SELECT Name FROM Member WHERE Name LIKE '_ar%' AND UPPER(Status) = 'ACTIVE'
+	2
+
+
+
+173
+How many rows will be returned by the query below?
+SELECT Name FROM Member WHERE LENGTH(Name) = 5 AND NVL(EndDate, '20-Apr-2015') – StartDate < 30
+	2
+
+
+
+174
+Select the output from the query below?
+SELECT Count(NVL(EndDate,’30-Apr-2015’)) FROM Member WHERE (Name LIKE ‘M%’ OR Name LIKE ‘%y’) AND StartDate > ’31-Jan-2015’
+	2
+
+175
+Which of the columns allows NULL values (choose all correct options)
+	Book.Category
+	BookIssue.BookId
+
+
+
+176
+Consider the following relational schema along with functional dependencies:
+ProductDetails (ProdId, ProdName, Color, Cost, CategoryId, CategoryName)
+ProdId -> ProdName; {ProdId, Color} -> Cost;
+ProdId -> CategoryId; CategoryId -> CategoryName
+What would be the resulting relational schema after converting to 3NF?
+	TableA (ProdId, CategoryId, ProdName)
+	TableB (CategoryId, CategoryName)
+	TableC (ProdId, Color, Cost)
+
+
+
+177
+Which query will not cause a Table Scan?
+	WHERE DEST_STN = 'Mumbai'
+	WHERE DEP_DT = '1-Jan-2015' AND SRC_STN = 'Mumbai'
+
+
+
+178
+Which one of the following equivalent queries will cause IDX2 index to be fully used?
+	WHERE SRC_STN IN ('Delhi', 'Chennai') AND DEP_DT <= ADD_MONTHS(SYSDATE, 1)
+
+
+179
+Identify the minimum number of operations required to reach the desired state
+	1 Insert, 2 Updates
+
+
+
+180
+Which is the correct outcome of the queries above?
+	1 successful insert, 3 errors
+
+
+
+181
+Which of the following queries provides the shaded area as per the Venn diagram?
+	Select A.P, A.Q, B.X, B.Y, B.Z from A FULL OUTER JOIN B ON A.P = B.Z WHERE A.P IS NULL OR B.X IS NULL
+
+
+
+182
+We have two non empty tables A and B. When will the output from their Cartesian Product be same as output from their Full Outer Join? Note that both tables A and B have a column X which is used for joining them. Choose one option that has least data restrictions.
+	Both tables can have any number of rows but they must have only one distinct value in column X. A.X and B.X must be same for all rows in both tables
+
+
+
+183
+Which of the following insert queries will execute successfully
+	INSERT INTO Person (Id, Age, City) VALUES (7, 40, ‘Cardiff’)
+	INSERT INTO Person (Id, Name, Age, City) VALUES (8, ‘Jane Brown’,10,’London’)
+
+
+
+184
+How many rows will be returned by the given query?
+SELECT Location, COUNT(PymtId) FROM Payment WHERE Amount > 40 GROUP BY Location, PymtMode
+	5
+
+
+
+185
+Find the output of the following Query?
+SELECT PymtMode FROM Payment GROUP BY PymtMode HAVING AVG(Amount) < (SELECT MAX(AVG(Amount)) FROM Payment GROUP BY Location)
+	PymtMode
+	Online Banking
+	Credit Card
+	Debit Card
+
+
+
+186
+Consider a library system with business rules as:
+Library Members are issued a maximum of three books at a time. A member can choose to not issue any book. A book can be issued to only one member at a time.
+Choose the correct notation that represents the relationship between Member and Book
+	Book ->O - - - - O<- Member
+
+
+
+187
+We need Average Payment Amount for each Payment Mode that have Average Payment Amount more than 45 sorted by Average Payment Amount so that largest Payment Amount appears first. Which of the following queries meets the requirement?
+	SELECT PymtMode, AVG(Amount) FROM Payment GROUP BY PymtMode HAVING AVG(Amount) > 45 ORDER BY AVG(Amount) DESC
+
+
+
+188
+Given the data provided below choose the most suitable Primary Key.
+	FirstName, LastName, Place Of Birth
+
+
+
+189
+What will be the output of the following query?
+SELECT Location, COUNT(PymtId) AS “COUNT” FROM Payment WHERE TO_CHAR(PymtDt, 'MON') = 'JAN' GROUP BY Location HAVING SUM(Amount) = (SELECT MAX(SUM(Amount)) FROM Payment WHERE TO_CHAR(PymtDt, 'MON') = 'JAN' GROUP BY Location)
+	
+	Location	Count
+	Houston		2
+
+
+
+190
+Which of the following statements are functionally equivalent to the Item table above?
+	Only 2
+
+
+
+191
+Consider two tables with columns and primary key (PK) and foreign key (FK) as provided below.
+Which of the following queries is always guaranteed to provide the shaded area as per the Venn diagram?
+	SELECT A.P, A.Q, B.X, B.Y, B.Z FROM B RIGHT OUTER JOIN A ON A.P = B.Z WHERE B.X IS NULL
+
+
+
+192
+Identify the statements that will be TRUE after executing these statements on an empty mongodb database.
+db.product.insert([{_id: 1, description: "Basketball", price: 300, discount: 10}, {_id: 2, description: "Football", price: 200, discount: 15}, {_id: 3, description: "Tennis", price: 500, discount: 20}, {_id: 4, description: "Bat", price: 250, discount: 25}, {_id: 5, description: "VolleyBall", price: 400, discount: 5} ]);
+db.product.update({$or: [{description: "Basketball"}, {discount: 20}]}, {$set: {discount: 15}});
+db.product.update({_id: 5}, {price: 350, discount: 10});
+db.product.update({_id: 4}, {$set: {description: "Baseball"}});
+db.product.remove({discount: 25});
+	The product collection will have 4 documents
+	Two products will offer discount of 15%
+
+
+
+193
+Consider a table T with column DOJ with data type DATE. Which of the following queries can be used to extract numeric month from DOJ column?
+	SELECT SUBSTR(TO_CHAR(DOJ, 'MM/DD/CCYY'),1,2) FROM T
+	SELECT TO_CHAR(DOJ, 'MM') FROM T
+
+
+
+194
+Examine the two queries provided below and select statements that are true
+SELECT 'Jack' AS Name, 100 AS Marks FROM DUAL 
+UNION SELECT 'Jack' AS Name, 100 AS Marks FROM DUAL 
+UNION ALL SELECT 'Jack' AS Name, 100 AS Marks FROM DUAL
+
+SELECT 'Jack' AS Name, 100 AS Marks FROM DUAL 
+UNION ALL SELECT 'Jack' AS Name, 100 AS Marks FROM DUAL 
+UNION SELECT 'Jack' AS Name, 100 AS Marks FROM DUAL
+
+	Query A and B are different, Query A returns 2 rows while Query B returns 1 row
+
+
+
+195
+Which of the following pairs of queries are equivalent under all circumstances?
+SELECT DeptNo FROM Emp GROUP BY DeptNo;
+SELECT DISTINCT DeptNo FROM Emp;
+SELECT D.* FROM Emp E, Dept D WHERE D.DeptNo = E.DeptNo
+SELECT * FROM Dept WHERE DeptNo IN (SELECT DeptNo from Emp)
+SELECT AVG(DeptNo) As AVG FROM Emp;
+SELECT SUM(DeptNo) / COUNT(*) AS AVG FROM Emp;
+SELECT COUNT(*) - COUNT(DeptNo) FROM Emp;
+SELECT COUNT(CASE WHEN DeptNo IS NULL THEN 0 ELSE NULL END) FROM Emp;
+	Queries 1 and 4
+
+
+
+196
+Consider a library system with business rules as:
+A book is written by one or many authors. An author can write many books but author details are stored only if he/she has written at least 1 book.
+Choose the correct notation that represents the relationship between Book and Author
+	Book ->|----|<- Author
+
+
+
+197
+Which of the following queries list Books that have never been issued to any member. Select all correct answers.
+	SELECT Name FROM Book WHERE BId NOT IN (SELECT BId FROM Issue)
+	SELECT Name FROM Book B WHERE NOT EXISTS (SELECT 1 FROM Issue I WHERE B.BId = I.BId)
+
+
+
+198
+How many rows will be returned by the given query?
+SELECT Name FROM Book B LEFT OUTER JOIN Issue I ON B.BId = I.BId WHERE MId IS NULL
+	1
+
+
+
+199
+Consider a relation Part(PartId, StoreId, Quantity, StoreAddress) with following functional dependencies:
+{PartId, StoreId} -> Quantity
+StoreId -> StoreAddress
+Which of the following statement is TRUE?
+	Part is in 1NF
+
+
+
+200
+A table with ___________cannot exhibit partial dependency.
+	Single attribute
+
+
+
+201
+How many rows will be produced by the query below?
+SELECT DISTINCT PymtMode, Location, CASE Amount WHEN 20 THEN Amount * 2 WHEN 40 THEN Amount + 10 ELSE 40 END FROM Payment WHERE Location != ‘Chicago’
+	4
+
+
+
+202
+Match the following
+Data																							Database Type
+Financial data - Needs transaction support. Data has fixed structure.							Relational Database
+Product Catalog - Heavy volume of reads and infrequent writes. Data has dynamic structure		Document-Oriented Database
+Recommendations - Need rapid traversal of links between customers and ratings					Graph Database
+User activity Logs - Heavy volume of writes														Column Family Store
+Shopping Cart - Temporary information that is frequently changed								Key-Value Store
+
+
+
+203
+SELECT Name from Person Order By Age DESC, City
+	Thomas appears at third last position in the result
+	People at last two positions have the same last name
+
+
+
+204
+What is the output from the execution of the query provided below: SELECT B AS A, SUM(A) AS B FROM Test GROUP BY B
+	A	B
+	1	6
+	2	3
+	3	3
+
+
+205
+How many rows will be produced by the query below?
+SELECT A.A, B.A, B.B
+FROM (SELECT 'A' AS A FROM DUAL UNION SELECT 'B' AS B FROM DUAL) A
+FULL OUTER JOIN
+(SELECT 'A' AS A, 'B' AS B FROM DUAL UNION SELECT 'A' AS A, 'C' AS B FROM DUAL) B
+ON A.A = B.B
+	3 rows
+
+
+
+206
+We have a requirement to display first letter of Name in Upper Case and remaining letters in Lower Case. Which of the following queries will achieve the same?
+SELECT CONCAT(UPPER(SUBSTR(Name,1,1)), LOWER(SUBSTR(Name,2))) AS Name from Employee;
+SELECT CONCAT(UPPER(SUBSTR(Name,1,1)), LOWER(SUBSTR(Name,2, LENGTH(Name)-1))) AS Name from Employee;
+SELECT CONCAT(UPPER(SUBSTR(Name,1,1)), SUBSTR(LOWER(Name),2,LENGTH(Name)-1)) AS Name from Employee
+	All of the above
