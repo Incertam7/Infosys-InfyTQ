@@ -1,0 +1,16 @@
+Predict the output of the following code snippet.
+
+number=28
+for num in range(25,30):
+    if(number>num):
+        print(num)
+    else:
+        print(num)
+        break
+
+
+
+25
+26
+27
+28
