@@ -1,0 +1,12 @@
+ What should be the value of num1 and num2 to get the output as "1"?
+
+if((num1/num2==5) and (num1+num2)>5):
+    print("1")
+elif((num1-num2)<=1 or (num1%num2)==0):
+    print("2")
+else:
+    print("3")
+
+
+
+num1=5, num2=1
