@@ -1,0 +1,49 @@
+Which among the following codes have equivalent logic?
+
+Code1:
+if(value3>1000 and value3<1006):
+  if(value1=="ABC"):
+    if(value2=="A"):
+      value4=10
+    else:
+      value4=8
+  elif(value1=="XYZ"):
+    if(value2=="A"):
+      value4=8
+    else:
+      value4=6
+print(value4)
+
+
+
+Code2:
+if(value3>=1001 and value3<=1005 and value1=="ABC"):
+    if(value2=="A"):
+        value4=10
+    else:
+        value4=8
+elif(value3>1000 and value3<1006 and value1=="XYZ"):
+     if(value2=="A"):
+        value4=8
+     else:
+        value4=6
+print(value4)
+
+
+
+Code3:
+if(value3>1000 and value3<1006 or value1=="ABC"):
+   if(value2=="A"):
+      value4=10
+   else:
+      value4=8
+elif(value3>1000 and value3<1006 or  value1=="XYZ"):
+   if(value2=="A"):
+      value4=8
+   else:
+      value4=6
+print(value4)
+
+
+
+Code1,Code2 
