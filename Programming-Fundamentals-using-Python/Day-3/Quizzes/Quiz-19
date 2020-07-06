@@ -1,0 +1,13 @@
+Predict the output of the following code snippet.
+
+counter = 0
+while (counter <= 9):
+	if (counter % 2 == 0):
+		pass
+	else:
+		print(counter, end = ' ')
+	counter += 1
+
+
+
+1  3  5  7  9
