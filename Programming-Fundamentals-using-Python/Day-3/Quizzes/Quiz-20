@@ -1,0 +1,15 @@
+Which among the following statements may result in an error?
+Assume that the statements are executed in the order in which it is written.
+
+a. list1=[5,10,15,20,25]
+b. print(len(list1))
+c. print(list1[4])
+d. print(list1[5])
+e. print(list1[4:5])
+f. list1[2]=12
+g. print(list1)
+h. list1=list1+[8,9]
+
+
+
+d
