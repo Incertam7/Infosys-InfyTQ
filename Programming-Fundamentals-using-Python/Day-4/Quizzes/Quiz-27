@@ -1,0 +1,12 @@
+Choose the most appropriate function call needed at line 4 to get the output as ‘Result: 4’.
+
+def check_value(message,num):
+    msg=message[:num]
+    return len(msg)
+
+#function call statement
+print("Result:", result)
+
+
+
+result=check_value('Infosys',4)
