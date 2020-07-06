@@ -1,1 +1,17 @@
+Match the following based on collect_tax() function given below:
 
+def collect_tax(x,y):
+    tax=x+y
+    return tax
+
+a=5000
+b=12000
+result=collect_tax(a,b)
+print(result)
+
+
+
+def collect_tax(x,y):		Function signature
+collect_tax(a,b)			Function call
+a,b							Actual arguments
+x,y							Formal arguments
