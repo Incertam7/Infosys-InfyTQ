@@ -1,0 +1,14 @@
+What should be the value of the variables num1 and num2 in the code below if the output expected is 4?
+
+num1=?
+num2=?
+while(num1>=2):
+    if(num1>num2):
+        num1=num1/2
+    else:
+        print(num1)
+        break
+
+
+
+16, 6
