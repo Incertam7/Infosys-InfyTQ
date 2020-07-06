@@ -1,0 +1,19 @@
+What will be the output of the code given below?
+
+def division(a,b):
+    try:
+        return int(a)/b
+    except TypeError:
+        print("Type error")
+    except ValueError:
+        print("Value error")
+    finally:
+        print("Finally")
+    print("Done")
+division('A',10)
+
+
+
+Value error
+Finally
+Done
