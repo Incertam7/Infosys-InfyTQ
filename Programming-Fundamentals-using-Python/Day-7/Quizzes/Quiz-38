@@ -1,0 +1,12 @@
+What is the output of the following code snippet?
+
+import math
+num_list=[100.5,30.465,-1.22,20.15]
+num_list.insert(1, -100.5)
+num_list.pop(0)
+num_list.sort()
+print(math.ceil(math.fabs(num_list[0])))
+
+
+
+101
